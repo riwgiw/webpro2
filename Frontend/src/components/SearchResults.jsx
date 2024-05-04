@@ -1,0 +1,26 @@
+import React from "react";
+
+import '../App.css'
+
+import { Link , useParams } from "react-router-dom";
+
+function SearchResults({ results }) {
+
+    const uniqueResults = [...new Set(results.map((result) => result.artistname))];
+
+  return (
+    <div id="scroll" className="flex flex-col w-full bg-white shadow-md rounded-md mt-3 max-h-[200px] overflow-y-scroll font-medium">
+      {uniqueResults.map((result, index) => (
+        <Link
+          to={`/calendar/${result}`}
+          key={index}
+          className="pl-2 py-1 hover:bg-[#efefef] cursor-pointer text-black"
+        >
+          {result}
+        </Link>
+      ))}
+    </div>
+  );
+}
+
+export default SearchResults;
