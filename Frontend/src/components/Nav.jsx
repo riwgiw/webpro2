@@ -89,12 +89,7 @@ function Nav() {
                     <IconCom icon="search" size="16" />
                     <p className="ml-2 text-[20px] font-semibold">Search</p>
                   </button>
-                  <a
-                    href="/calendar"
-                    className="transition-all duration-500 text-slate-200 hover:bg-[#1CAA4E] hover:text-white px-3 py-2 rounded-md text-[20px] font-semibold"
-                  >
-                    Calendar
-                  </a>
+                  
                   <p className="text-slate-200 text-[20px] font-semibold px-3 py-2">
                     {name.toUpperCase()}
                   </p>
@@ -107,12 +102,6 @@ function Nav() {
                 </>
               ) : (
                 <>
-                  <a
-                    href="/"
-                    className="transition-all duration-500 text-slate-200 hover:bg-[#1CAA4E] hover:text-white px-3 py-2 rounded-md text-[20px] font-semibold"
-                  >
-                    Calendar
-                  </a>
                   <a
                     href="/signup"
                     className="transition-all duration-500 bg-black text-slate-200 hover:bg-slate-900 hover:text-white px-3 py-2 rounded-md text-[20px] font-semibold"
