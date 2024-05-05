@@ -14,6 +14,8 @@ function Signup() {
 
   const navigate = useNavigate();
 
+  const [errorMessage, setErrorMessage] = useState("");
+
   const handleInput = (event) => {
     setValue((prev) => ({
       ...prev,
@@ -45,6 +47,9 @@ function Signup() {
       navigate('/login');
     } catch (error) {
       console.log(error);
+      if (error.response && error.response.data && error.response.data.error) {
+        setErrorMessage(error.response.data.error);
+      }
     }
   };
 
@@ -55,7 +60,7 @@ function Signup() {
         onSubmit={handleSubmit}
         className="mx-auto max-w-[1250px] bg-[#191414] mt-[60px] pt-[40px]"
       >
-        <div className="mx-auto rounded-md bg-[#242424] h-[420px] w-[420px] flex flex-col items-center">
+        <div className="mx-auto rounded-md bg-[#242424] min-h-[420px] pb-3 h-full w-[420px] flex flex-col items-center">
           <p className="text-[#1DB954] font-bold text-[35px] mt-[45px]">
             Sign up
           </p>
@@ -83,6 +88,9 @@ function Signup() {
             onChange={handleInput}
             name="password"
           />
+          {errorMessage && (
+            <p className="text-red-500 mt-1">{errorMessage}</p>
+          )}
           <button className="h-[40px] w-[340px] rounded-3xl mt-[40px] bg-[#1DB954] text-center font-semibold text-white">
             Sign up
           </button>

@@ -12,7 +12,7 @@ import dayGridPlugin from "@fullcalendar/daygrid"; // Import dayGrid plugin
 import interactionPlugin from "@fullcalendar/interaction";
 
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 
 function Calendar() {
@@ -26,6 +26,8 @@ function Calendar() {
 
   const calendarRef = useRef(null);
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     const calendar = calendarRef.current.getApi();
     calendar.render();
@@ -37,10 +39,12 @@ function Calendar() {
         );
         console.log(response.data);
         setData(response.data);
-        if (response.data.valid) {
-          navigate("/");
+        const res = await axios.get("http://localhost:3002")
+        console.log(res.data.valid)
+        if (res.data.valid) {
+          navigate(`/calendar/${artistname}`);
         } else {
-          navigate("/calendar/:artistname");
+          navigate("/login");
         }
       } catch (err) {
         console.log(err);

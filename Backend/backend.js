@@ -281,6 +281,18 @@ app.get("/get/:id", async (req, res) => {
 
 app.post("/signup", async (req, res) => {
   try {
+    // Check if username or email already exists
+    const existingUser = await UserModel.findOne({
+      $or: [
+        { username: req.body.username },
+        { email: req.body.email }
+      ]
+    });
+
+    if (existingUser) {
+      return res.status(400).json({ error: "Username or email already exists" });
+    }
+
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
 
     const newUser = new UserModel({
