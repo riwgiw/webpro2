@@ -37,6 +37,11 @@ function Calendar() {
         );
         console.log(response.data);
         setData(response.data);
+        if (response.data.valid) {
+          navigate("/");
+        } else {
+          navigate("/calendar/:artistname");
+        }
       } catch (err) {
         console.log(err);
       }
@@ -92,7 +97,7 @@ function Calendar() {
         <div className="px-2 sm:px-4 lg:px-6">
           <div className="mt-[40px] flex flex-col w-full items-center">
             <div className="mt-[40px] w-full min-h-[200px] max-h-[200px] h-full flex justify-center">
-              <div className="text-white h-[200px] max-w-[450px] w-full bg-[#242424] rounded-lg flex flex-row justify-center items-center">
+              <div className="text-white h-[200px] max-w-[350px] w-full bg-[#242424] rounded-lg flex flex-row justify-center items-center">
                 {randomEvent && (
                   <div className="max-w-[150px] max-h-[150px] h-full w-full rounded-3xl bg-[#1DB954]">
                     <img

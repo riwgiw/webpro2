@@ -161,13 +161,6 @@ function Nav() {
                   <IconCom icon="search" size='16' />
                   <p className="ml-2">Search</p>
                 </button>
-                <a
-                  href="/"
-                  className="text-slate-200 hover:bg-[#1CAA4E] 
-                hover:text-white block px-3 py-2 rounded-md text-[20px] font-semibold text-start"
-                >
-                  Calendar
-                </a>
                 <p className="text-slate-200 text-[20px] font-semibold block px-3 py-2 text-start">
                   {name.toUpperCase()}
                 </p>
@@ -181,13 +174,6 @@ function Nav() {
               </>
             ) : (
               <>
-                <a
-                  href="/"
-                  className="text-slate-200 hover:bg-[#1CAA4E] 
-                hover:text-white block px-3 py-2 rounded-md text-[20px] font-semibold text-start"
-                >
-                  Calendar
-                </a>
                 <a
                   href="/signup"
                   className="transition-all duration-500 bg-black block text-slate-200 hover:bg-slate-900 hover:text-white px-3 py-2 rounded-md text-[20px] font-semibold text-start"
