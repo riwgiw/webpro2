@@ -178,13 +178,13 @@ function EditEvent() {
           <div className="h-[60px] flex items-center justify-center sm:justify-start  text-white font-semibold">
             <Link
               to="/manageuser"
-              className="px-3 py-2 hover:bg-[#191919] rounded-lg text-[16px] sm:text-[18px] md:text-[20px]"
+              className="transition-all duration-500 px-3 py-2 hover:bg-[#191919] rounded-lg text-[16px] sm:text-[18px] md:text-[20px]"
             >
               Manage Users
             </Link>
             <Link
               to="/manageevent"
-              className="px-3 py-2 ml-[20px] rounded-lg bg-black text-[17px] sm:text-[18px] md:text-[20px]"
+              className="transition-all duration-500 px-3 py-2 ml-[20px] rounded-lg bg-black text-[17px] sm:text-[18px] md:text-[20px]"
             >
               Manage Events
             </Link>

@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 
-import Nav from "./components/Nav";
-import Footer from "./components/Footer";
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
 
 function Login() {
   const [values, setValue] = useState({
@@ -62,22 +62,22 @@ function Login() {
           </p>
           <a
             href="/signup"
-            className="text-white font-medium text-[12px] mt-[5px]"
+            className="text-white font-medium text-[12px] mt-[5px] hover:text-[#1DB954]"
           >
             <p>Don’t have an account yet? Signup.</p>
           </a>
           <input
             type="text"
-            className="h-[40px] w-[340px] rounded-md mt-[20px] pl-2 focus:outline-none 
-            focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#1DB954]"
+            className="h-[40px] w-[340px] rounded-md mt-[20px] pl-2 focus:outline-none bg-[#191414] text-white
+            focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
             placeholder="Your username"
             onChange={handleInput}
             name="username"
           />
           <input
             type="password"
-            className="h-[40px] w-[340px] rounded-md mt-[20px] pl-2 focus:outline-none 
-            focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#1DB954]"
+            className="h-[40px] w-[340px] rounded-md mt-[20px] pl-2 focus:outline-none bg-[#191414] text-white
+            focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
             placeholder="Your password"
             onChange={handleInput}
             name="password"

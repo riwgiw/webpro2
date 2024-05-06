@@ -33,11 +33,11 @@ function SearchBar({ setResults }) {
   };
 
   return (
-    <div className="flex mt-[30px] w-full max-w-[400px] h-[35px] justify-start bg-white rounded-md pl-3 items-center overflow-hidden text-green-600">
+    <div className="flex mt-[30px] w-full max-w-[400px] h-[35px] justify-start bg-[#191414] rounded-md pl-3 items-center overflow-hidden text-green-600">
       <IconCom icon="search" size="17" />
       <input
         type="text"
-        className="border-white border border-none h-full w-full ml-2 focus:outline-none text-black font-medium text-[18px]"
+        className="border-white border border-none h-full w-full ml-2 focus:outline-none font-medium text-[18px] bg-[#191414] text-white"
         placeholder="Type name artist to search..."
         value={inputText}
         onChange={(e) => handleChange(e.target.value)}

@@ -52,7 +52,7 @@ function Home() {
           {firstEvent && (
             <Link
               to={`/event/${firstEvent._id}`}
-              className="bg-[#242424] min-h-[350px] w-full flex flex-col md:flex-row justify-start items-center rounded-md"
+              className="bg-[#242424] min-h-[350px] w-full flex flex-col md:flex-row justify-start items-center rounded-md transition-all duration-300 hover:bg-[#191919] hover:outline-1 hover:outline hover:outline-[#1DB954]"
             >
               <div className="min-h-[275px] h-[275px] sm:h-[275px] md:h-[350px] lg:h-[350px] max-w-[770px] w-full bg-[#242424] rounded-md">
                 <img
@@ -95,12 +95,13 @@ function Home() {
           </div>
           <div className="">
             <div className="min-h-[830px] w-full flex flex-col justify-start">
-              <div className="min-h-[750px] w-full flex flex-wrap justify-center">
+              <div className="min-h-[750px] w-full flex flex-wrap justify-center px-0">
                 {data.slice(1).map((event, index) => (
                   <Link
                     key={index}
                     to={`/event/${event._id}`}
-                    className="bg-[#242424] rounded-md h-[350px] max-h-[350px] max-w-[370px] w-[370px] mx-[10px] mb-[25px] md:mb-[30px]"
+                    className="bg-[#242424] rounded-md h-[350px] max-h-[350px] max-w-[340px] w-full md:mx-3 mb-4 md:mb-6 
+                    transition-all duration-300 hover:bg-[#191919] hover:outline-1 hover:outline hover:outline-[#1DB954]"
                   >
                     <div className="max-h-[220px] h-[220px] bg-[#242424] rounded-md">
                       <img
@@ -109,7 +110,7 @@ function Home() {
                         className="object-cover h-full w-full rounded-md"
                       />
                     </div>
-                    <div className="px-1 sm:px-2 md:px-4">
+                    <div className="px-2 sm:px-4 md:px-6">
                       <p className="mt-[10px] truncate w-full font-semibold text-[#1DB954] text-[26px] sm:text-[28px] md:text-[30px] overflow-hidden whitespace-nowrap">
                         {event.eventname}
                       </p>

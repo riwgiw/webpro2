@@ -66,24 +66,24 @@ function Signup() {
           </p>
           <input
             type="text"
-            className="h-[40px] w-[340px] rounded-md mt-[40px] pl-2 focus:outline-none 
-            focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#1DB954]"
+            className="h-[40px] w-[340px] rounded-md mt-[40px] pl-2 focus:outline-none bg-[#191414] 
+            focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954] text-white"
             placeholder="Create username"
             onChange={handleInput}
             name="username"
           />
           <input
             type="text"
-            className="h-[40px] w-[340px] rounded-md mt-[20px] pl-2 focus:outline-none 
-            focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#1DB954]"
+            className="h-[40px] w-[340px] rounded-md mt-[20px] pl-2 focus:outline-none bg-[#191414] 
+            focus:ring-0 focus:ring-offset-2 focus:ring-offset-[#1DB954] text-white"
             placeholder="Your email"
             onChange={handleInput}
             name="email"
           />
           <input
             type="password"
-            className="h-[40px] w-[340px] rounded-md mt-[20px] pl-2 focus:outline-none 
-            focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#1DB954]"
+            className="h-[40px] w-[340px] rounded-md mt-[20px] pl-2 focus:outline-none bg-[#191414] 
+            focus:ring-0 focus:ring-offset-2 focus:ring-offset-[#1DB954] text-white"
             placeholder="Create password"
             onChange={handleInput}
             name="password"
@@ -96,7 +96,7 @@ function Signup() {
           </button>
           <a
             href="/login"
-            className="text-white font-medium text-[12px] mt-[5px]"
+            className="text-white font-medium text-[12px] mt-[5px] hover:text-[#1DB954]"
           >
             <p>Already have account? Log in.</p>
           </a>

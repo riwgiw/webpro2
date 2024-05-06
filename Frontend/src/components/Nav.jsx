@@ -75,7 +75,7 @@ function Nav() {
                     <>
                       <a
                         href="/manageuser"
-                        className="text-slate-200 hover:bg-[#1CAA4E] 
+                        className="text-slate-200 hover:bg-[#1CAA4E] transition-all duration-500
                     hover:text-white block px-3 py-2 rounded-md text-[20px] font-semibold text-start"
                       >
                         Admin Manager

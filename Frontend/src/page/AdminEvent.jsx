@@ -75,10 +75,10 @@ function AdminEvent() {
       <div className="w-full min-h-[60px] bg-[#242424] mt-[60px] fixed top-0">
         <div className="max-w-[1250px] mx-auto h-full bg-[#242424] px-4 sm:px-6 lg:px-8">
           <div className="h-[60px] flex items-center justify-center sm:justify-start  text-white font-semibold">
-            <Link to='/manageuser' className="px-3 py-2 hover:bg-[#191919] rounded-lg text-[16px] sm:text-[18px] md:text-[20px]">
+            <Link to='/manageuser' className="transition-all duration-500 px-3 py-2 hover:bg-[#191919] rounded-lg text-[16px] sm:text-[18px] md:text-[20px]">
               Manage Users
             </Link>
-            <button className="px-3 py-2 ml-[20px] rounded-lg bg-black text-[17px] sm:text-[18px] md:text-[20px]">
+            <button className="transition-all duration-500 px-3 py-2 ml-[20px] rounded-lg bg-black text-[17px] sm:text-[18px] md:text-[20px]">
               Manage Events
             </button>
           </div>
@@ -92,7 +92,7 @@ function AdminEvent() {
             </p>
             <Link
               to="/createevent"
-              className="min-h-[40px] max-h-[40px] h-full px-2 bg-[#1DB954] flex justify-center items-center rounded-md text-white font-semibold"
+              className="min-h-[40px] max-h-[40px] h-full px-2 bg-[#1DB954] flex justify-center items-center rounded-md text-white font-semibold transition-all duration-300 hover:bg-[#1CAA4E]"
             >
               + Create Events
             </Link>
@@ -114,7 +114,7 @@ function AdminEvent() {
               <button
                 onClick={prevPage}
                 disabled={currentPage === 1}
-                className="min-h-[40px] min-w-[40px] max-h-[40px] max-w-[40px] w-full h-full flex justify-center items-center rounded-lg bg-[#1DB954] text-[16px] hover:bg-[#191919]"
+                className="transition-all duration-300 min-h-[40px] min-w-[40px] max-h-[40px] max-w-[40px] w-full h-full flex justify-center items-center rounded-lg bg-[#1DB954] text-[16px] hover:bg-[#191919]"
               >
                 <IconCom icon="left" size="22" />
               </button>
@@ -124,7 +124,7 @@ function AdminEvent() {
               <button
                 onClick={nextPage}
                 disabled={currentPage === totalPages}
-                className="min-h-[40px] min-w-[40px] max-h-[40px] max-w-[40px] w-full h-full flex justify-center items-center rounded-lg bg-[#1DB954] text-[16px] hover:bg-[#191919]"
+                className="transition-all duration-300 min-h-[40px] min-w-[40px] max-h-[40px] max-w-[40px] w-full h-full flex justify-center items-center rounded-lg bg-[#1DB954] text-[16px] hover:bg-[#191919]"
               >
                 <IconCom icon="right" size="22" />
               </button>
@@ -151,7 +151,7 @@ function AdminEvent() {
             <tbody className="table-row-group">
               {currentEvents.map((event, index) => (
                 <React.Fragment key={index}>
-                  <tr className="text-white border-y border-solid border-[#191414] hidden md:table-row hover:bg-[#2B2B2B]">
+                  <tr className="text-white border-y border-solid border-[#191414] hidden md:table-row hover:bg-[#2B2B2B] transition-all duration-300">
                     <td className="max-w-[90px] sm:max-w-[130px] md:max-w-[200px] h-[70px] table-cell text-left align-middle px-4">
                       <div className="flex items-center">
                         <div className="min-h-[45px] min-w-[45px] max-h-[45px] max-w-[45px] w-full h-full bg-[#1DB954] rounded-lg flex justify-center items-center mr-[8px]">
@@ -212,12 +212,12 @@ function AdminEvent() {
                     <td className="h-[70px] table-cell text-left align-middle px-4">
                       <div className="flex justify-end">
                         <Link to={`/editevent/${event._id}`} 
-                        className="min-h-[40px] min-w-[40px] max-h-[40px] max-w-[40px] w-full h-full bg-[#1DB954] rounded-lg flex justify-center items-center border border-solid border-[#191414]">
+                        className="min-h-[40px] min-w-[40px] max-h-[40px] max-w-[40px] w-full h-full bg-[#1DB954] rounded-lg flex justify-center items-center transition-all duration-300 hover:bg-[#1CAA4E]">
                           <IconCom icon="edit" />
                         </Link>
                         <button 
                         onClick={() => handleDelete(event._id)}
-                        className="ml-4 min-h-[40px] min-w-[40px] max-h-[40px] max-w-[40px] w-full h-full bg-[#942423] rounded-lg flex justify-center items-center border border-solid border-[#191414]">
+                        className="ml-4 min-h-[40px] min-w-[40px] max-h-[40px] max-w-[40px] w-full h-full bg-[#942423] rounded-lg flex justify-center items-center transition-all duration-300 hover:bg-[#7D1D1C]">
                           <IconCom icon="trash" />
                         </button>
                       </div>
@@ -299,7 +299,7 @@ function AdminEvent() {
             <button
               onClick={prevPage}
               disabled={currentPage === 1}
-              className="min-h-[40px] min-w-[40px] max-h-[40px] max-w-[40px] w-full h-full flex justify-center items-center rounded-lg bg-[#1DB954] text-[16px] hover:bg-[#191919]"
+              className="transition-all duration-300 min-h-[40px] min-w-[40px] max-h-[40px] max-w-[40px] w-full h-full flex justify-center items-center rounded-lg bg-[#1DB954] text-[16px] hover:bg-[#191919]"
             >
               <IconCom icon="left" size="22" />
             </button>
@@ -309,7 +309,7 @@ function AdminEvent() {
             <button
               onClick={nextPage}
               disabled={currentPage === totalPages}
-              className="min-h-[40px] min-w-[40px] max-h-[40px] max-w-[40px] w-full h-full flex justify-center items-center rounded-lg bg-[#1DB954] text-[16px] hover:bg-[#191919]"
+              className="transition-all duration-300 min-h-[40px] min-w-[40px] max-h-[40px] max-w-[40px] w-full h-full flex justify-center items-center rounded-lg bg-[#1DB954] text-[16px] hover:bg-[#191919]"
             >
               <IconCom icon="right" size="22" />
             </button>
