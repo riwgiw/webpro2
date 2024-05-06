@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 
 function Login() {
   const [values, setValue] = useState({

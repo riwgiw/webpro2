@@ -3,6 +3,7 @@ import React, { useEffect, useState, useRef } from "react";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import IconCom from "../components/IconCom";
+import CountdownTimer from "../components/CountdownTimer";
 
 import SearchBar from "../components/SearchBar";
 import SearchResults from "../components/SearchResults";
@@ -12,15 +13,16 @@ import dayGridPlugin from "@fullcalendar/daygrid"; // Import dayGrid plugin
 import interactionPlugin from "@fullcalendar/interaction";
 
 import axios from "axios";
-import { useNavigate, useParams } from "react-router-dom";
-
+import { useNavigate, useParams , Link } from "react-router-dom";
 
 function Calendar() {
   const [Allevents, setAllevents] = useState(false);
   const [showMore, setShowMore] = useState(false);
   const [allEventsClicked, setAllEventsClicked] = useState(false);
 
-  const [data, setData] = useState([]);
+  const [defaultdata, setDefaultdata] = useState([]);
+  const [updata, setUpData] = useState([]);
+  const [alldata, setAllData] = useState([]);
 
   const { artistname } = useParams();
 
@@ -38,9 +40,16 @@ function Calendar() {
           "http://localhost:3002/get-calendar/" + artistname
         );
         console.log(response.data);
-        setData(response.data);
-        const res = await axios.get("http://localhost:3002")
-        console.log(res.data.valid)
+        const sortedData = response.data.sort(
+          (a, b) => new Date(a.startsum) - new Date(b.startsum)
+        );
+        const filteredData = sortedData.filter(
+          (event) => new Date(event.startsum) > new Date()
+        );
+        setDefaultdata(filteredData);
+        setUpData(filteredData);
+        setAllData(sortedData);
+        const res = await axios.get("http://localhost:3002");
         if (res.data.valid) {
           navigate(`/calendar/${artistname}`);
         } else {
@@ -54,17 +63,21 @@ function Calendar() {
   }, [artistname]);
 
   const randomEvent =
-    data.length > 0 ? data[Math.floor(Math.random() * data.length)] : null;
+    alldata.length > 0
+      ? alldata[Math.floor(Math.random() * alldata.length)]
+      : null;
 
   const handleUpClick = () => {
     setAllevents(false);
     setAllEventsClicked(false);
+    setUpData(defaultdata);
   };
 
   const handleAllClick = () => {
     setAllevents(true);
     setAllEventsClicked(true);
     setShowMore(false);
+    setUpData(alldata);
   };
 
   const handleShowClick = () => {
@@ -86,7 +99,7 @@ function Calendar() {
     }
   };
 
-  const allevents = data.map((event) => ({
+  const allevents = alldata.map((event) => ({
     title: event.eventtype,
     start: event.startsum,
     end: event.endsum,
@@ -112,7 +125,7 @@ function Calendar() {
                   </div>
                 )}
                 <div className="ml-[20px]">
-                  <p className="font-medium text-[22px] md:text-[28px]">
+                  <p className="font-medium text-[26px] md:text-[28px]">
                     {randomEvent && randomEvent.artistname}
                   </p>
                   {randomEvent && (
@@ -134,9 +147,7 @@ function Calendar() {
             Calendar
           </p>
 
-          <div
-            className="max-w-[1210px] h-full w-full rounded-md bg-white p-3"
-          >
+          <div className="max-w-[1210px] h-full w-full rounded-md bg-white p-3">
             <FullCalendar
               ref={calendarRef}
               plugins={[dayGridPlugin, interactionPlugin]}
@@ -183,10 +194,11 @@ function Calendar() {
             )}
           </div>
           <div className="min-h-[360px] max-w-[1210px] h-full w-full">
-            {data
-              .slice(0, showMore || Allevents ? data.length : 3)
+            {updata
+              .slice(0, showMore || Allevents ? updata.length : 3)
               .map((data, index) => (
-                <div
+                <Link
+                  to={`/event/${data._id}`}
                   key={index}
                   className="text-[16px] text-white px-2 sm:px-4 md:px-6 max-w-[1210px] w-full min-h-[80px] max-h-[80px] h-full 
                   sm:min-h-[90px] sm:max-h-[90px] md:min-h-[90px] md:max-h-[90px] hover:bg-[#242424] rounded-lg flex flex-row items-center my-3"
@@ -206,9 +218,13 @@ function Calendar() {
                       <p className="px-2 w-full truncate sm:min-w-[150px] sm:max-w-[250px] md:min-w-[250px] md:max-w-[350px] overflow-hidden whitespace-nowrap">
                         {data.eventname}
                       </p>
-                      <p className="px-0 md:px-2 min-w-[120px] max-w-[120px] w-full">
-                        {data.formattedCreatedAt}
-                      </p>
+                      <div className="px-0 md:px-2 min-w-[120px] max-w-[140px] w-full">
+                        {new Date(data.startsum) > new Date() ? (
+                          <CountdownTimer targetDate={data.startsum} />
+                        ) : (
+                          <p>Out of time</p>
+                        )}
+                      </div>
                       <a
                         href="/"
                         className="px-2 max-w-[500px] w-full flex items-center justify-end"
@@ -235,12 +251,12 @@ function Calendar() {
                       </a>
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
           </div>
 
           {!allEventsClicked &&
-            data.length > 3 && ( // Condition to hide "Show more" button
+            updata.length > 3 && ( // Condition to hide "Show more" button
               <div className="flex justify-center items-end w-full max-h-[80px] h-[80px]">
                 <div
                   className="px-4 py-2 rounded-md bg-[#1DB954] text-white text-[20px] font-semibold cursor-pointer"

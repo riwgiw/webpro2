@@ -38,7 +38,7 @@ function CountdownTimer({ targetDate }) {
               {timeLeft.days} day&nbsp;
             </span>
           )}
-          {timeLeft.days === 0 && timeLeft.hours === 0 && timeLeft.minutes === 0 && timeLeft.seconds === 0 ? (
+          {timeLeft.days < 0 && timeLeft.hours < 0 && timeLeft.minutes < 0 && timeLeft.seconds < 0 ? (
             "Out of time"
           ) : (
             <>
