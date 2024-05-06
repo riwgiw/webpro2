@@ -283,7 +283,7 @@ function AdminEvent() {
                         })()}
                         <button
                           onClick={() => togglePopup(event)}
-                          className="ml-4 min-h-[40px] min-w-[40px] max-h-[40px] max-w-[40px] w-full h-full bg-[#1DB954] rounded-lg flex justify-center items-center border border-solid border-[#191414]"
+                          className="ml-4 min-h-[40px] min-w-[40px] max-h-[40px] max-w-[40px] w-full h-full bg-[#1DB954] rounded-lg flex justify-center items-center transition-all duration-300 hover:bg-[#1CAA4E]"
                         >
                           <IconCom icon="point" />
                         </button>
@@ -338,14 +338,14 @@ function AdminEvent() {
               <Link
                 to={selectedEvent ? `/editevent/${selectedEvent._id}` : '#'}
                 onClick={handleEdit}
-                className="mb-2 w-full flex items-center px-4 py-3 text-sm text-left rounded-md hover:bg-[#242424]"
+                className="transition-all duration-300 mb-2 w-full flex items-center px-4 py-3 text-sm text-left rounded-md hover:bg-[#242424]"
               >
                 <IconCom icon="edit" />
                 <p className="ml-[10px] text-[16px] font-medium">Edit</p>
               </Link>
               <button
                 onClick={() => selectedEvent && handleDelete(selectedEvent._id)}
-                className="flex w-full items-center px-4 py-3 text-sm text-left bg-[#581615] rounded-md hover:bg-[#942423]"
+                className="transition-all duration-300 flex w-full items-center px-4 py-3 text-sm text-left bg-[#581615] rounded-md hover:bg-[#942423]"
               >
                 <IconCom icon="trash" />
                 <p className="ml-[10px] text-[16px] font-medium">Delete</p>

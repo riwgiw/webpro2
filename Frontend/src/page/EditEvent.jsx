@@ -193,17 +193,23 @@ function EditEvent() {
       </div>
       <div className="-z-40 mt-[120px] px-2 sm:px-4 md:px-6 lg:px-16 max-w-[1250px] mx-auto h-full flex justify-center">
         <div className="mt-[30px] w-full flex flex-col items-center">
-          <div className="h-[70px] w-full flex flex-row items-center">
+          <div className="h-[80px] md:h-[70px] w-full flex flex-row items-center">
             <Link
               to="/manageevent"
-              className="flex px-3 py-2 rounded-lg items-center border-2 border-solid border-[#8A8A8A] text-white"
+              className="flex px-3 py-2 rounded-lg items-center border-2 border-solid border-[#8A8A8A] text-white hover:bg-[#242424]"
             >
               <IconCom icon="left" size="18" />
               <p className="ml-[2px] text-[14px]">Back</p>
             </Link>
-            <div className="ml-[15px] flex flex-col justify-evenly h-full">
-              <p className="text-[#1DB954] font-medium text-[16px]">
+            <div className="ml-[15px] flex flex-col justify-evenly h-full w-full">
+              <p className="hidden md:block text-[#1DB954] md:max-w-[500px] w-full font-medium text-[16px] truncate overflow-hidden whitespace-nowrap">
                 {id}-{initialEventname}
+              </p>
+              <p className="block md:hidden text-[#1DB954] w-full font-medium text-[16px]">
+                <p>{id}</p>
+                <p className="max-w-[265px] w-full truncate overflow-hidden whitespace-nowrap">
+                  {initialEventname}
+                </p>
               </p>
               <p className="text-white font-semibold text-[20px]">Edit Event</p>
             </div>
@@ -215,7 +221,7 @@ function EditEvent() {
             <div className="hidden md:flex w-full h-full">
               <div className="w-1/2 h-full text-white text-[14px] font-medium">
                 <p className="mb-[10px]">Image</p>
-                <div className="w-full h-0 rounded-md aspect-w-1 aspect-h-1 bg-white my-[10px] text-black">
+                <div className="w-full h-0 rounded-md aspect-w-1 aspect-h-1 bg-[#191414] my-[10px] text-black">
                   {previewImage1 ? (
                     <img
                       src={previewImage1}
@@ -234,8 +240,8 @@ function EditEvent() {
                   type="file"
                   accept="image/*"
                   onChange={onInputChange1}
-                  className="px-3 py-2 my-[10px] h-[40px] w-full rounded-md bg-white flex text-black 
-                file:border-0 file:bg-white file:text-[14px] file:font-semibold"
+                  className="px-3 py-2 my-[10px] h-[40px] w-full rounded-md bg-[#191414] flex text-white 
+                  file:border-0 file:bg-[#191414] file:text-[14px] file:font-semibold file:text-white"
                 ></input>
                 <p className="mt-[15px] mb-[10px]">Artist</p>
                 <div className="w-full h-0 rounded-md aspect-w-1 aspect-h-1 bg-white my-[10px]">
@@ -257,8 +263,8 @@ function EditEvent() {
                   type="file"
                   accept="image/*"
                   onChange={onInputChange2}
-                  className="px-3 py-2 my-[10px] h-[40px] w-full rounded-md bg-white flex text-black 
-                file:border-0 file:bg-white file:text-[14px] file:font-semibold"
+                  className="px-3 py-2 my-[10px] h-[40px] w-full rounded-md bg-[#191414] flex text-white 
+                  file:border-0 file:bg-[#191414] file:text-[14px] file:font-semibold file:text-white"
                 ></input>
                 <p className="mt-[15px] mb-[10px]">Name Artist</p>
                 <input
@@ -266,7 +272,9 @@ function EditEvent() {
                   value={artistname}
                   onChange={(e) => setArtistname(e.target.value)}
                   name="artistname"
-                  className="h-[40px] w-full rounded-md bg-white text-black pl-2"
+                  placeholder="Artist"
+                  className="h-[40px] w-full rounded-md pl-2 focus:outline-none bg-[#191414] text-white
+                  focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                 />
                 <p className="mt-[15px] mb-[10px]">Spotify Link</p>
                 <input
@@ -274,7 +282,9 @@ function EditEvent() {
                   value={artistspotify}
                   onChange={(e) => setArtistspotify(e.target.value)}
                   name="artistspotify"
-                  className="h-[40px] w-full rounded-md bg-white text-black pl-2"
+                  placeholder="Spotify"
+                  className="h-[40px] w-full rounded-md pl-2 focus:outline-none bg-[#191414] text-white
+                  focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                 />
               </div>
 
@@ -285,7 +295,9 @@ function EditEvent() {
                   value={eventname}
                   onChange={(e) => setEventname(e.target.value)}
                   name="eventname"
-                  className="h-[40px] w-full rounded-md bg-white text-black pl-2"
+                  placeholder="Event"
+                  className="h-[40px] w-full rounded-md pl-2 focus:outline-none bg-[#191414] text-white
+                  focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                 />
                 <p className="mt-[15px] mb-[10px]">Detail Event</p>
                 <textarea
@@ -293,7 +305,8 @@ function EditEvent() {
                   value={eventdetail}
                   onChange={(e) => setEventdetail(e.target.value)}
                   name="eventdetail"
-                  className="w-full pl-2 text-black rounded-md"
+                  className="w-full pl-2 pt-2 rounded-md bg-[#191414] text-white focus:outline-none
+                  focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                   id=""
                   rows="8"
                   placeholder="Tell about event"
@@ -303,7 +316,8 @@ function EditEvent() {
                   value={eventtype}
                   onChange={(e) => setEventtype(e.target.value)}
                   name="eventtype"
-                  className="h-[40px] w-full rounded-md text-black px-2"
+                  className="h-[40px] w-full rounded-md px-2 bg-[#191414] text-white focus:outline-none
+                  focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                 >
                   <option>Select Type</option>
                   <option value="pubbar">Pub/Bar</option>
@@ -318,7 +332,9 @@ function EditEvent() {
                   value={locationname}
                   onChange={(e) => setLocationname(e.target.value)}
                   name="locationname"
-                  className="h-[40px] w-full rounded-md bg-white text-black pl-2"
+                  placeholder="Location"
+                  className="h-[40px] w-full rounded-md pl-2 bg-[#191414] text-white focus:outline-none
+                  focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                 />
                 <div className="mt-[15px] mb-[10px] flex">
                   <div className="w-1/2 pr-[5px]">
@@ -328,7 +344,9 @@ function EditEvent() {
                       value={locationprovice}
                       onChange={(e) => setLocationprovice(e.target.value)}
                       name="locationprovice"
-                      className="h-[40px] w-full rounded-md bg-white text-black pl-2"
+                      placeholder="Provice"
+                      className="h-[40px] w-full rounded-md pl-2 bg-[#191414] text-white focus:outline-none
+                      focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                     />
                   </div>
                   <div className="pl-[5px] w-1/2">
@@ -338,7 +356,9 @@ function EditEvent() {
                       value={locationcountry}
                       onChange={(e) => setLocationcountry(e.target.value)}
                       name="locationcountry"
-                      className="h-[40px] w-full rounded-md bg-white text-black pl-2"
+                      placeholder="Country"
+                      className="h-[40px] w-full rounded-md pl-2 bg-[#191414] text-white focus:outline-none
+                      focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                     />
                   </div>
                 </div>
@@ -350,7 +370,9 @@ function EditEvent() {
                       value={locationembed}
                       onChange={(e) => setLocationembed(e.target.value)}
                       name="locationembed"
-                      className="h-[40px] w-full rounded-md bg-white text-black pl-2"
+                      placeholder="Embed link"
+                      className="h-[40px] w-full rounded-md pl-2 bg-[#191414] text-white focus:outline-none
+                      focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                     />
                   </div>
                   <div className="pl-[5px] w-1/2">
@@ -360,14 +382,16 @@ function EditEvent() {
                       value={locationgooglemap}
                       onChange={(e) => setLocationgooglemap(e.target.value)}
                       name="locationgooglemap"
-                      className="h-[40px] w-full rounded-md bg-white text-black pl-2"
+                      placeholder="Link Google map"
+                      className="h-[40px] w-full rounded-md pl-2 bg-[#191414] text-white focus:outline-none
+                      focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                     />
                   </div>
                 </div>
                 <p className="mt-[15px] mb-[10px]">Time Event</p>
                 <div className="mt-[10px] mb-[10px] flex flex-col items-center">
-                  <div className="w-full h-[100px] rounded-md outline-2 outline outline-white px-[2px] py-[2px] mb-[10px] flex">
-                    <div className="h-full w-[30px] bg-white rounded-l-md text-gray-800 flex flex-col items-center pt-1">
+                  <div className="w-full h-[100px] rounded-md outline-2 outline outline-[#8A8A8A] px-[2px] py-[2px] mb-[10px] flex">
+                    <div className="h-full w-[30px] bg-[#191414] rounded-l-md text-white flex flex-col items-center pt-1">
                       <IconCom icon="calendarcorrect" size="16" />
                       <p className="rotate-90 mt-5 text-[16px] font-semibold">
                         START
@@ -379,7 +403,8 @@ function EditEvent() {
                           value={startday}
                           onChange={(e) => setStartday(e.target.value)}
                           name="startday"
-                          className="h-[30px] w-[55px] bg-white text-black flex rounded-lg pl-1"
+                          className="h-[30px] w-[55px] flex rounded-lg pl-1 bg-[#191414] text-white focus:outline-none
+                          focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                         >
                           <option>DAY</option>
                           {Array.from({ length: 31 }, (_, index) => (
@@ -397,7 +422,8 @@ function EditEvent() {
                           value={startmonth}
                           onChange={(e) => setStartmonth(e.target.value)}
                           name="startmonth"
-                          className="ml-2 h-[30px] w-[120px] bg-white text-black flex justify-center items-center rounded-lg pl-1"
+                          className="ml-2 h-[30px] w-[120px] flex justify-center items-center rounded-lg pl-1 bg-[#191414] text-white focus:outline-none
+                          focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                         >
                           <option>MONTH</option>
                           {[
@@ -428,7 +454,8 @@ function EditEvent() {
                           value={startyear}
                           onChange={(e) => setStartyear(e.target.value)}
                           name="startyear"
-                          className="ml-2 h-[30px] w-[60px] bg-white text-black flex justify-center items-center rounded-lg pl-1"
+                          className="ml-2 h-[30px] w-[60px] flex justify-center items-center rounded-lg pl-1 bg-[#191414] text-white focus:outline-none
+                          focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                         >
                           <option>YEAR</option>
                           {Array.from({ length: 15 }, (_, index) => (
@@ -438,13 +465,14 @@ function EditEvent() {
                           ))}
                         </select>
                       </div>
-                      <div className="flex items-center outline outline-white outline-2 px-2 py-1 rounded-md">
+                      <div className="flex items-center outline outline-[#8A8A8A] outline-2 px-2 py-1 rounded-md">
                         <IconCom icon="clock" size="16" />
                         <select
                           value={starthour}
                           onChange={(e) => setStarthour(e.target.value)}
                           name="starthour"
-                          className="ml-1 h-[30px] w-[50px] bg-white text-black flex justify-center items-center rounded-lg pl-1"
+                          className="ml-1 h-[30px] w-[50px] flex justify-center items-center rounded-lg pl-1 bg-[#191414] text-white focus:outline-none
+                          focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                         >
                           <option>HH</option>
                           {Array.from({ length: 24 }, (_, index) => (
@@ -461,7 +489,8 @@ function EditEvent() {
                           value={startminute}
                           onChange={(e) => setStartminute(e.target.value)}
                           name="startminute"
-                          className="h-[30px] w-[50px] bg-white text-black flex justify-center items-center rounded-lg pl-1"
+                          className="h-[30px] w-[55px] flex justify-center items-center rounded-lg pl-1 bg-[#191414] text-white focus:outline-none
+                          focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                         >
                           <option>MM</option>
                           {Array.from({ length: 60 }, (_, index) => (
@@ -477,8 +506,8 @@ function EditEvent() {
                     </div>
                   </div>
                   <IconCom icon="doubledown" size="20" />
-                  <div className="w-full h-[100px] rounded-md outline-2 outline outline-white px-[2px] py-[2px] mt-[10px] flex">
-                    <div className="h-full w-[30px] bg-white rounded-l-md text-gray-800 flex flex-col items-center pt-1">
+                  <div className="w-full h-[100px] rounded-md outline-2 outline outline-[#8A8A8A] px-[2px] py-[2px] mt-[10px] flex">
+                    <div className="h-full w-[30px] bg-[#191414] rounded-l-md text-white flex flex-col items-center pt-1">
                       <IconCom icon="calendarx" size="16" />
                       <p className="rotate-90 mt-3 text-[16px] font-semibold">
                         END
@@ -490,7 +519,8 @@ function EditEvent() {
                           value={endday}
                           onChange={(e) => setEndday(e.target.value)}
                           name="endday"
-                          className="h-[30px] w-[55px] bg-white text-black flex rounded-lg pl-1"
+                          className="h-[30px] w-[55px] flex rounded-lg pl-1 bg-[#191414] text-white focus:outline-none
+                          focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                         >
                           <option>DAY</option>
                           {Array.from({ length: 31 }, (_, index) => (
@@ -508,7 +538,8 @@ function EditEvent() {
                           value={endmonth}
                           onChange={(e) => setEndmonth(e.target.value)}
                           name="endmonth"
-                          className="ml-2 h-[30px] w-[120px] bg-white text-black flex justify-center items-center rounded-lg pl-1"
+                          className="ml-2 h-[30px] w-[120px] flex justify-center items-center rounded-lg pl-1 bg-[#191414] text-white focus:outline-none
+                          focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                         >
                           <option>MONTH</option>
                           {[
@@ -539,7 +570,8 @@ function EditEvent() {
                           value={endyear}
                           onChange={(e) => setEndyear(e.target.value)}
                           name="endyear"
-                          className="ml-2 h-[30px] w-[60px] bg-white text-black flex justify-center items-center rounded-lg pl-1"
+                          className="ml-2 h-[30px] w-[60px] flex justify-center items-center rounded-lg pl-1 bg-[#191414] text-white focus:outline-none
+                          focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                         >
                           <option>YEAR</option>
                           {Array.from({ length: 15 }, (_, index) => (
@@ -549,13 +581,14 @@ function EditEvent() {
                           ))}
                         </select>
                       </div>
-                      <div className="flex items-center outline outline-white outline-2 px-2 py-1 rounded-md">
+                      <div className="flex items-center outline outline-[#8A8A8A] outline-2 px-2 py-1 rounded-md">
                         <IconCom icon="clock" size="16" />
                         <select
                           value={endhour}
                           onChange={(e) => setEndhour(e.target.value)}
                           name="endhour"
-                          className="ml-1 h-[30px] w-[50px] bg-white text-black flex justify-center items-center rounded-lg pl-1"
+                          className="ml-1 h-[30px] w-[50px] flex justify-center items-center rounded-lg pl-1 bg-[#191414] text-white focus:outline-none
+                          focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                         >
                           <option>HH</option>
                           {Array.from({ length: 24 }, (_, index) => (
@@ -572,7 +605,8 @@ function EditEvent() {
                           value={endminute}
                           onChange={(e) => setEndminute(e.target.value)}
                           name="endminute"
-                          className="h-[30px] w-[50px] bg-white text-black flex justify-center items-center rounded-lg pl-1"
+                          className="h-[30px] w-[55px] flex justify-center items-center rounded-lg pl-1 bg-[#191414] text-white focus:outline-none
+                          focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                         >
                           <option>MM</option>
                           {Array.from({ length: 60 }, (_, index) => (
@@ -590,7 +624,7 @@ function EditEvent() {
                 </div>
                 <button
                   type="submit"
-                  className="h-[40px] w-full rounded-lg mt-[40px] bg-[#1DB954] text-center font-semibold text-white"
+                  className="h-[40px] w-full rounded-lg mt-[40px] bg-[#1DB954] text-center font-semibold text-white transition-all duration-300 hover:bg-[#1CAA4E]"
                 >
                   Save
                 </button>
@@ -617,8 +651,8 @@ function EditEvent() {
                 type="file"
                 accept="image/*"
                 onChange={onInputChange1}
-                className="px-3 py-2 my-[10px] h-[40px] w-full rounded-md bg-white flex text-black 
-                file:border-0 file:bg-white file:text-[14px] file:font-semibold"
+                className="px-3 py-2 my-[10px] h-[40px] w-full rounded-md bg-[#191414] flex text-white 
+                file:border-0 file:bg-[#191414] file:text-[14px] file:font-semibold file:text-white"
               ></input>
               <p className="mt-[15px] mb-[10px]">Artist</p>
               <div className="w-full h-0 rounded-md aspect-w-1 aspect-h-1 bg-white my-[10px]">
@@ -640,8 +674,8 @@ function EditEvent() {
                 type="file"
                 accept="image/*"
                 onChange={onInputChange2}
-                className="px-3 py-2 my-[10px] h-[40px] w-full rounded-md bg-white flex text-black 
-                file:border-0 file:bg-white file:text-[14px] file:font-semibold"
+                className="px-3 py-2 my-[10px] h-[40px] w-full rounded-md bg-[#191414] flex text-white 
+                file:border-0 file:bg-[#191414] file:text-[14px] file:font-semibold file:text-white"
               ></input>
               <p className="mt-[15px] mb-[10px]">Name Artist</p>
               <input
@@ -649,7 +683,9 @@ function EditEvent() {
                 value={artistname}
                 onChange={(e) => setArtistname(e.target.value)}
                 name="artistname"
-                className="h-[40px] w-full rounded-md bg-white text-black pl-2"
+                placeholder="Artist"
+                className="h-[40px] w-full rounded-md pl-2 focus:outline-none bg-[#191414] text-white
+                focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
               />
               <p className="mt-[15px] mb-[10px]">Spotify Link</p>
               <input
@@ -657,7 +693,9 @@ function EditEvent() {
                 value={artistspotify}
                 onChange={(e) => setArtistspotify(e.target.value)}
                 name="artistspotify"
-                className="h-[40px] w-full rounded-md bg-white text-black pl-2"
+                placeholder="Spotify"
+                className="h-[40px] w-full rounded-md pl-2 focus:outline-none bg-[#191414] text-white
+                focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
               />
               <p className="mt-[15px] mb-[10px]">Name Event</p>
               <input
@@ -665,11 +703,14 @@ function EditEvent() {
                 value={eventname}
                 onChange={(e) => setEventname(e.target.value)}
                 name="eventname"
-                className="h-[40px] w-full rounded-md bg-white text-black pl-2"
+                placeholder="Event"
+                className="h-[40px] w-full rounded-md pl-2 focus:outline-none bg-[#191414] text-white
+                focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
               />
               <p className="mt-[15px] mb-[10px]">Detail Event</p>
               <textarea
-                className="w-full pl-2 text-black rounded-md"
+                className="w-full pl-2 pt-2 rounded-md bg-[#191414] text-white focus:outline-none
+                focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                 type="text"
                 value={eventdetail}
                 onChange={(e) => setEventdetail(e.target.value)}
@@ -683,7 +724,8 @@ function EditEvent() {
                 value={eventtype}
                 onChange={(e) => setEventtype(e.target.value)}
                 name="eventtype"
-                className="h-[40px] w-full rounded-md text-black px-2"
+                className="h-[40px] w-full rounded-md px-2 bg-[#191414] text-white focus:outline-none
+                focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
               >
                 <option>Select Type</option>
                 <option value="pubbar">Pub/Bar</option>
@@ -698,7 +740,9 @@ function EditEvent() {
                 value={locationname}
                 onChange={(e) => setLocationname(e.target.value)}
                 name="locationname"
-                className="h-[40px] w-full rounded-md bg-white text-black pl-2"
+                placeholder="Location"
+                className="h-[40px] w-full rounded-md pl-2 bg-[#191414] text-white focus:outline-none
+                focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
               />
               <div className="mt-[15px] mb-[10px] flex">
                 <div className="w-1/2 pr-[5px]">
@@ -708,7 +752,9 @@ function EditEvent() {
                     value={locationprovice}
                     onChange={(e) => setLocationprovice(e.target.value)}
                     name="locationprovice"
-                    className="h-[40px] w-full rounded-md bg-white text-black pl-2"
+                    placeholder="Provice"
+                    className="h-[40px] w-full rounded-md pl-2 bg-[#191414] text-white focus:outline-none
+                    focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                   />
                 </div>
                 <div className="pl-[5px] w-1/2">
@@ -718,7 +764,9 @@ function EditEvent() {
                     value={locationcountry}
                     onChange={(e) => setLocationcountry(e.target.value)}
                     name="locationcountry"
-                    className="h-[40px] w-full rounded-md bg-white text-black pl-2"
+                    placeholder="Country"
+                    className="h-[40px] w-full rounded-md pl-2 bg-[#191414] text-white focus:outline-none
+                    focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                   />
                 </div>
               </div>
@@ -730,7 +778,9 @@ function EditEvent() {
                     value={locationembed}
                     onChange={(e) => setLocationembed(e.target.value)}
                     name="locationembed"
-                    className="h-[40px] w-full rounded-md bg-white text-black pl-2"
+                    placeholder="Embed link"
+                    className="h-[40px] w-full rounded-md pl-2 bg-[#191414] text-white focus:outline-none
+                    focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                   />
                 </div>
                 <div className="pl-[5px] w-1/2">
@@ -740,14 +790,16 @@ function EditEvent() {
                     value={locationgooglemap}
                     onChange={(e) => setLocationgooglemap(e.target.value)}
                     name="locationgooglemap"
-                    className="h-[40px] w-full rounded-md bg-white text-black pl-2"
+                    placeholder="Link Google map"
+                    className="h-[40px] w-full rounded-md pl-2 bg-[#191414] text-white focus:outline-none
+                    focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                   />
                 </div>
               </div>
               <p className="mt-[15px] mb-[10px]">Time Event</p>
               <div className="mt-[10px] mb-[10px] flex flex-col items-center">
-                <div className="w-full h-[100px] rounded-md outline-2 outline outline-white px-[2px] py-[2px] mb-[10px] flex">
-                  <div className="h-full w-[30px] bg-white rounded-l-md text-gray-800 flex flex-col items-center pt-1">
+                <div className="w-full h-[100px] rounded-md outline-2 outline outline-[#8A8A8A] px-[2px] py-[2px] mb-[10px] flex">
+                  <div className="h-full w-[30px] bg-[#191414] rounded-l-md text-white flex flex-col items-center pt-1">
                     <IconCom icon="calendarcorrect" size="16" />
                     <p className="rotate-90 mt-5 text-[16px] font-semibold">
                       START
@@ -759,7 +811,8 @@ function EditEvent() {
                         value={startday}
                         onChange={(e) => setStartday(e.target.value)}
                         name="startday"
-                        className="h-[30px] w-[55px] bg-white text-black flex rounded-lg pl-1"
+                        className="h-[30px] w-[55px] flex rounded-lg pl-1 bg-[#191414] text-white focus:outline-none
+                        focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                       >
                         <option>DAY</option>
                         {Array.from({ length: 31 }, (_, index) => (
@@ -775,7 +828,8 @@ function EditEvent() {
                         value={startmonth}
                         onChange={(e) => setStartmonth(e.target.value)}
                         name="startmonth"
-                        className="ml-2 h-[30px] w-[120px] bg-white text-black flex justify-center items-center rounded-lg pl-1"
+                        className="ml-2 h-[30px] w-[120px] flex justify-center items-center rounded-lg pl-1 bg-[#191414] text-white focus:outline-none
+                        focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                       >
                         <option>MONTH</option>
                         {[
@@ -804,7 +858,8 @@ function EditEvent() {
                         value={startyear}
                         onChange={(e) => setStartyear(e.target.value)}
                         name="startyear"
-                        className="ml-2 h-[30px] w-[60px] bg-white text-black flex justify-center items-center rounded-lg pl-1"
+                        className="ml-2 h-[30px] w-[60px] flex justify-center items-center rounded-lg pl-1 bg-[#191414] text-white focus:outline-none
+                        focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                       >
                         <option>YEAR</option>
                         {Array.from({ length: 15 }, (_, index) => (
@@ -814,13 +869,14 @@ function EditEvent() {
                         ))}
                       </select>
                     </div>
-                    <div className="flex items-center outline outline-white outline-2 px-2 py-1 rounded-md">
+                    <div className="flex items-center outline outline-[#8A8A8A] outline-2 px-2 py-1 rounded-md">
                       <IconCom icon="clock" size="16" />
                       <select
                         value={starthour}
                         onChange={(e) => setStarthour(e.target.value)}
                         name="starthour"
-                        className="ml-1 h-[30px] w-[50px] bg-white text-black flex justify-center items-center rounded-lg pl-1"
+                        className="ml-1 h-[30px] w-[50px] flex justify-center items-center rounded-lg pl-1 bg-[#191414] text-white focus:outline-none
+                        focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                       >
                         <option>HH</option>
                         {Array.from({ length: 24 }, (_, index) => (
@@ -837,7 +893,8 @@ function EditEvent() {
                         value={startminute}
                         onChange={(e) => setStartminute(e.target.value)}
                         name="startminute"
-                        className="h-[30px] w-[50px] bg-white text-black flex justify-center items-center rounded-lg pl-1"
+                        className="h-[30px] w-[55px] flex justify-center items-center rounded-lg pl-1 bg-[#191414] text-white focus:outline-none
+                        focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                       >
                         <option>MM</option>
                         {Array.from({ length: 60 }, (_, index) => (
@@ -853,8 +910,8 @@ function EditEvent() {
                   </div>
                 </div>
                 <IconCom icon="doubledown" size="20" />
-                <div className="w-full h-[100px] rounded-md outline-2 outline outline-white px-[2px] py-[2px] mt-[10px] flex">
-                  <div className="h-full w-[30px] bg-white rounded-l-md text-gray-800 flex flex-col items-center pt-1">
+                <div className="w-full h-[100px] rounded-md outline-2 outline outline-[#8A8A8A] px-[2px] py-[2px] mt-[10px] flex">
+                  <div className="h-full w-[30px] bg-[#191414] rounded-l-md text-white flex flex-col items-center pt-1">
                     <IconCom icon="calendarx" size="16" />
                     <p className="rotate-90 mt-3 text-[16px] font-semibold">
                       END
@@ -866,7 +923,8 @@ function EditEvent() {
                         value={endday}
                         onChange={(e) => setEndday(e.target.value)}
                         name="endday"
-                        className="h-[30px] w-[55px] bg-white text-black flex rounded-lg pl-1"
+                        className="h-[30px] w-[55px] flex rounded-lg pl-1 bg-[#191414] text-white focus:outline-none
+                        focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                       >
                         <option>DAY</option>
                         {Array.from({ length: 31 }, (_, index) => (
@@ -882,7 +940,8 @@ function EditEvent() {
                         value={endmonth}
                         onChange={(e) => setEndmonth(e.target.value)}
                         name="endmonth"
-                        className="ml-2 h-[30px] w-[120px] bg-white text-black flex justify-center items-center rounded-lg pl-1"
+                        className="ml-2 h-[30px] w-[120px] flex justify-center items-center rounded-lg pl-1 bg-[#191414] text-white focus:outline-none
+                        focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                       >
                         <option>MONTH</option>
                         {[
@@ -911,7 +970,8 @@ function EditEvent() {
                         value={endyear}
                         onChange={(e) => setEndyear(e.target.value)}
                         name="endyear"
-                        className="ml-2 h-[30px] w-[60px] bg-white text-black flex justify-center items-center rounded-lg pl-1"
+                        className="ml-2 h-[30px] w-[60px] flex justify-center items-center rounded-lg pl-1 bg-[#191414] text-white focus:outline-none
+                        focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                       >
                         <option>YEAR</option>
                         {Array.from({ length: 15 }, (_, index) => (
@@ -921,13 +981,14 @@ function EditEvent() {
                         ))}
                       </select>
                     </div>
-                    <div className="flex items-center outline outline-white outline-2 px-2 py-1 rounded-md">
+                    <div className="flex items-center outline outline-[#8A8A8A] outline-2 px-2 py-1 rounded-md">
                       <IconCom icon="clock" size="16" />
                       <select
                         value={endhour}
                         onChange={(e) => setEndhour(e.target.value)}
                         name="endhour"
-                        className="ml-1 h-[30px] w-[50px] bg-white text-black flex justify-center items-center rounded-lg pl-1"
+                        className="ml-1 h-[30px] w-[50px] flex justify-center items-center rounded-lg pl-1 bg-[#191414] text-white focus:outline-none
+                        focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                       >
                         <option>HH</option>
                         {Array.from({ length: 24 }, (_, index) => (
@@ -944,7 +1005,8 @@ function EditEvent() {
                         value={endminute}
                         onChange={(e) => setEndminute(e.target.value)}
                         name="endminute"
-                        className="h-[30px] w-[50px] bg-white text-black flex justify-center items-center rounded-lg pl-1"
+                        className="h-[30px] w-[55px] flex justify-center items-center rounded-lg pl-1 bg-[#191414] text-white focus:outline-none
+                        focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                       >
                         <option>MM</option>
                         {Array.from({ length: 60 }, (_, index) => (
@@ -962,7 +1024,7 @@ function EditEvent() {
               </div>
               <button
                 type="submit"
-                className="h-[40px] w-full rounded-lg mt-[40px] bg-[#1DB954] text-center font-semibold text-white"
+                className="h-[40px] w-full rounded-lg mt-[40px] bg-[#1DB954] text-center font-semibold text-white hover:bg-[#1CAA4E]"
               >
                 Save
               </button>

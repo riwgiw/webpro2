@@ -130,7 +130,7 @@ function Calendar() {
                   </p>
                   {randomEvent && (
                     <a href={randomEvent.artistspotify}>
-                      <div className="mt-[20px] flex items-center w-[95px] h-[40px] md:w-[110px] md:h-[45px] bg-[#1DB954] justify-center rounded-md">
+                      <div className="mt-[20px] flex items-center w-[95px] h-[40px] md:w-[110px] md:h-[45px] bg-[#1DB954] justify-center rounded-md transition-all duration-300 hover:bg-[#1CAA4E]">
                         <IconCom icon="spotify" size="20" />
                         <p className="ml-[5px] text-[15px] md:text-[16px]">
                           Spotify
@@ -200,7 +200,7 @@ function Calendar() {
                 <Link
                   to={`/event/${data._id}`}
                   key={index}
-                  className="text-[16px] text-white px-2 sm:px-4 md:px-6 max-w-[1210px] w-full min-h-[80px] max-h-[80px] h-full 
+                  className="transition-all duration-300 text-[16px] text-white px-2 sm:px-4 md:px-6 max-w-[1210px] w-full min-h-[80px] max-h-[80px] h-full 
                   sm:min-h-[90px] sm:max-h-[90px] md:min-h-[90px] md:max-h-[90px] hover:bg-[#242424] rounded-lg flex flex-row items-center my-3"
                 >
                   <div
@@ -259,7 +259,7 @@ function Calendar() {
             updata.length > 3 && ( // Condition to hide "Show more" button
               <div className="flex justify-center items-end w-full max-h-[80px] h-[80px]">
                 <div
-                  className="px-4 py-2 rounded-md bg-[#1DB954] text-white text-[20px] font-semibold cursor-pointer"
+                  className="px-4 py-2 rounded-md bg-[#1DB954] text-white text-[20px] font-semibold cursor-pointer transition-all duration-300 hover:bg-[#1CAA4E]"
                   onClick={handleShowClick}
                 >
                   <p>{showMore ? "Show less" : "Show more"}</p>

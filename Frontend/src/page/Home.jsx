@@ -95,7 +95,7 @@ function Home() {
           </div>
           <div className="">
             <div className="min-h-[830px] w-full flex flex-col justify-start">
-              <div className="min-h-[750px] w-full flex flex-wrap justify-center px-0">
+              <div className="min-h-[750px] w-full grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 grid gap-2 md:gap-3">
                 {data.slice(1).map((event, index) => (
                   <Link
                     key={index}
@@ -110,23 +110,40 @@ function Home() {
                         className="object-cover h-full w-full rounded-md"
                       />
                     </div>
-                    <div className="px-2 sm:px-4 md:px-6">
-                      <p className="mt-[10px] truncate w-full font-semibold text-[#1DB954] text-[26px] sm:text-[28px] md:text-[30px] overflow-hidden whitespace-nowrap">
+                    <div className="px-2 sm:px-3 md:px-4">
+                      <p className="mt-[10px] truncate w-full font-semibold text-[#1DB954] text-[28px] sm:text-[30px] md:text-[32px] overflow-hidden whitespace-nowrap">
                         {event.eventname}
                       </p>
-                      <div className="mt-[40px] flex justify-between text-white text-[16px] font-medium">
+                      <div className="mt-[40px] hidden md:flex justify-between text-white text-[16px] font-medium">
                         <div className="flex items-center">
-                          <IconCom icon="days" size="20" />
+                          <IconCom icon="clock" size="20" />
                           <div className="ml-[5px]">
                             <CountdownTimer targetDate={event.startsum} />
                           </div>
                         </div>
-                        <div className="hover:text-[#1DB954]">
+                        <div className="">
                           <div className="flex">
                             <p className="mr-[5px]">
-                              {event.locationgooglemap}
+                              {event.locationprovice},{event.locationcountry}
                             </p>
                             <IconCom icon="marker" size="20" />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex md:hidden flex-col text-white text-[16px] font-medium">
+                        <div className="flex items-center mt-1">
+                          <IconCom icon="clock" size="20" />
+                          <div className="ml-[5px]">
+                            <CountdownTimer targetDate={event.startsum} />
+                          </div>
+                        </div>
+                        <div className="">
+                          <div className="flex mt-2">
+                            <IconCom icon="marker" size="20" />
+                            <p className="mr-[5px]">
+                              {event.locationprovice},{event.locationcountry}
+                            </p>
+                            
                           </div>
                         </div>
                       </div>
@@ -135,7 +152,7 @@ function Home() {
                 ))}
               </div>
 
-              {data.length > 6 && (
+              {data.length > 7 && (
                 <div className="flex justify-center items-end w-full max-h-[80px] h-[80px]">
                   <div
                     className="px-4 py-2 rounded-md bg-[#1DB954] text-white text-[20px] font-semibold cursor-pointer"
