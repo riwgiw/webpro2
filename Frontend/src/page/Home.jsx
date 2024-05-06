@@ -61,14 +61,14 @@ function Home() {
                   className="object-cover h-full w-full rounded-md"
                 />
               </div>
-              <div className="max-w-[500px] w-full max-h-[350px] h-full py-4 flex flex-col px-2 sm:px-4 md:px-6">
+              <div className=" max-w-full md:max-w-[500px] w-full max-h-[350px] h-full py-4 flex flex-col px-2 sm:px-4 md:px-6">
                 <p
-                  className="w-full min-w-[300px] max-w-[550px] mb-[15px] font-semibold text-[#1DB954] text-[24px] sm:text-[26px] 
-                    md:text-[31px] lg:text-[36px] truncate"
+                  className="w-full min-w-[300px] max-w-[550px] mb-[15px] font-semibold text-[#1DB954] text-[26px] sm:text-[28px] 
+                    md:text-[33px] lg:text-[36px] truncate"
                 >
                   {firstEvent.eventname}
                 </p>
-                <p className="text-white text-[16px] h-[100px] truncate">
+                <p className="text-white text-[16px] md:h-[100px] truncate">
                   {firstEvent.eventdetail}
                 </p>
                 <div className="mt-[40px] flex justify-between text-white text-[16px] font-medium">

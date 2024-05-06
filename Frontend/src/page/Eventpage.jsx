@@ -227,7 +227,9 @@ function Eventpage() {
               </p>
               <div className="min-w-0 max-w-[665px] min-h-0 max-h-[2px] w-full h-full bg-[#858585] mt-[10px] rounded-md"></div>
               <div className="mt-[30px] min-w-0 max-w-[665px] min-h-0">
-                <p className="text-white text-[20px]">{eventdetail}</p>
+                <p className="text-white text-[20px] w-full break-words">
+                  {eventdetail}
+                </p>
               </div>
             </div>
           </div>
@@ -287,8 +289,8 @@ function Eventpage() {
             About Event
           </p>
           <div className="min-w-0 min-h-[2px] w-full h-full bg-[#858585] mt-[10px] rounded-md"></div>
-          <div className="mt-[30px] min-w-0 max-w-[665px] min-h-0 ">
-            <p className="text-white text-[18px]">{eventdetail}</p>
+          <div className="mt-[30px] min-w-0 max-w-[665px] min-h-0 w-full">
+            <p className="text-white text-[18px] w-full break-words">{eventdetail}</p>
           </div>
           <div className="px-[10px] py-[15px] mt-[40px] w-full max-w-[400px] min-h-[90px] rounded-md bg-[#242424] flex text-wrap items-center text-white text-[22px] overflow-hidden">
             <div className="min-w-[75px] w-[75px] max-w-[75px] h-[75px] max-h-[75px] rounded-full bg-[#1DB954]">
