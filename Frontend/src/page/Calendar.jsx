@@ -13,7 +13,7 @@ import dayGridPlugin from "@fullcalendar/daygrid"; // Import dayGrid plugin
 import interactionPlugin from "@fullcalendar/interaction";
 
 import axios from "axios";
-import { useNavigate, useParams , Link } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
 
 function Calendar() {
   const [Allevents, setAllevents] = useState(false);
@@ -129,11 +129,16 @@ function Calendar() {
                     {randomEvent && randomEvent.artistname}
                   </p>
                   {randomEvent && (
-                    <Link to={randomEvent.artistspotify} className="mt-[20px] flex items-center w-[95px] h-[40px] md:w-[110px] md:h-[45px] bg-[#1DB954] justify-center rounded-md 
-                    transition-all duration-300 hover:bg-[#1CAA4E]">
+                    <Link
+                      to={randomEvent.artistspotify}
+                      className="mt-[20px] flex items-center w-[95px] h-[40px] md:w-[110px] md:h-[45px] bg-[#1DB954] justify-center rounded-md 
+                    transition-all duration-300 hover:bg-[#1CAA4E]"
+                    >
                       <IconCom icon="spotify" size="20" />
-                      <p className="ml-[5px] text-[15px] md:text-[16px]">Spotify</p>
-                  </Link>
+                      <p className="ml-[5px] text-[15px] md:text-[16px]">
+                        Spotify
+                      </p>
+                    </Link>
                   )}
                 </div>
               </div>
@@ -212,21 +217,55 @@ function Calendar() {
                   </div>
                   <div className="hidden sm:block ml-[15px] w-full">
                     <div className="flex">
-                      <p className="px-2 w-full truncate sm:min-w-[150px] sm:max-w-[250px] md:min-w-[250px] md:max-w-[350px] overflow-hidden whitespace-nowrap">
+                      <p className="px-2 w-full truncate sm:min-w-[180px] sm:max-w-[180px] md:min-w-[270px] md:max-w-[270px] overflow-hidden whitespace-nowrap">
                         {data.eventname}
                       </p>
-                      <div className="px-0 md:px-2 min-w-[120px] max-w-[140px] w-full">
+                      <div className="min-w-[90px] max-w-[90px] w-full mx-2">
+                        {(() => {
+                          switch (data.eventtype) {
+                            case "concert":
+                              return (
+                                <div className="px-2 py-0 rounded-2xl bg-[#542217] flex items-center justify-center border border-solid border-[#8A8A8A]">
+                                  <p>concert</p>
+                                </div>
+                              );
+                            case "festival":
+                              return (
+                                <div className="px-2 py-0 rounded-2xl bg-[#535417] flex items-center justify-center border border-solid border-[#8A8A8A]">
+                                  <p>festival</p>
+                                </div>
+                              );
+                            case "pubbar":
+                              return (
+                                <div className="px-2 py-0 rounded-2xl bg-[#175445] flex items-center justify-center border border-solid border-[#8A8A8A]">
+                                  <p>pub/bar</p>
+                                </div>
+                              );
+                            case "internal":
+                              return (
+                                <div className="px-2 py-0 rounded-2xl bg-[#2E1754] flex items-center justify-center border border-solid border-[#8A8A8A]">
+                                  <p>internal</p>
+                                </div>
+                              );
+                            default:
+                              return (
+                                <div className="px-2 py-0 rounded-2xl bg-[#54174E] flex items-center justify-center border border-solid border-[#8A8A8A]">
+                                  <p>{data.eventtype}</p>
+                                </div>
+                              );
+                          }
+                        })()}
+                      </div>
+                      <div className="px-0 md:px-2 min-w-[120px] max-w-[140px] w-full flex justify-center">
                         {new Date(data.startsum) > new Date() ? (
                           <CountdownTimer targetDate={data.startsum} />
                         ) : (
                           <p>Out of time</p>
                         )}
                       </div>
-                      <div
-                        className="px-2 max-w-[500px] w-full flex items-center justify-end"
-                      >
+                      <div className="px-2 min-w-[100px] max-w-[300px] w-full flex items-center justify-end">
                         <p className="mr-[10px]">{data.locationcountry}</p>
-                        <IconCom icon="marker" size="18" />
+                        <IconCom icon="marker" size="16" />
                       </div>
                     </div>
                   </div>
@@ -240,7 +279,7 @@ function Calendar() {
                       </p>
                       <div
                         href="/"
-                        className="mr-[5px] w-1/2 flex items-center text-[#8A8A8A] text-[14px] justify-end"
+                        className="mr-[5px] max-w-[200px] w-full flex items-center text-[#8A8A8A] text-[14px] justify-end"
                       >
                         <p className="mr-[10px]">{data.locationcountry}</p>
                         <IconCom icon="marker" size="14" />

@@ -179,7 +179,7 @@ function Home() {
                 >
                   {firstEvent.eventname}
                 </p>
-                <p className="text-[#8A8A8A] font-light mb-[10px] text-[16px]">{firstEvent.artistname}</p>
+                <p className="text-[#8A8A8A] font-light mb-[10px] text-[20px]">{firstEvent.artistname}</p>
                 <p className="text-white text-[16px] md:h-[100px] truncate">
                   {firstEvent.eventdetail}
                 </p>
