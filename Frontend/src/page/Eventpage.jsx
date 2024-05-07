@@ -103,6 +103,8 @@ function Eventpage() {
   const [eventimage, setEventimage] = useState("");
   const [artistimage, setArtistimage] = useState("");
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -135,6 +137,12 @@ function Eventpage() {
         setArtistimage(response.data.artistimage);
 
         setStartsum(response.data.startsum);
+        const res = await axios.get("http://localhost:3002");
+        if (res.data.valid) {
+          navigate(`/event/${id}`);
+        } else {
+          navigate("/login");
+        }
       } catch (err) {
         console.log(err);
       }

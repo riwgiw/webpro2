@@ -12,8 +12,9 @@ import "../App.css";
 function Home() {
   const { id } = useParams();
   const [showMore, setShowMore] = useState(false);
-
   const [data, setData] = useState([]);
+  const [images, setImages] = useState([]);
+  const [imageCount, setImageCount] = useState(0);
 
   useEffect(() => {
     axios
@@ -26,6 +27,8 @@ function Home() {
           (event) => new Date(event.startsum) > new Date()
         );
         setData(filteredData);
+        setImages(filteredData.map((event) => event.eventimage));
+        setImageCount(filteredData.length);
       })
       .catch((err) => console.log(err));
   }, [id]);
@@ -36,13 +39,121 @@ function Home() {
     setShowMore(!showMore);
   };
 
+  let imageComponent = null;
+
+  if (imageCount === 1) {
+    imageComponent = (
+      <div className={`h-full w-full bg-[#242424] rounded-md`}>
+        {data.map((data, index) => (
+          <Link to={`/event/${data._id}`} key={index}>
+            <img
+              src={"/images/" + data.eventimage}
+              alt="Event"
+              className="object-cover h-full min-w-full w-full rounded-md"
+            />
+          </Link>
+        ))}
+      </div>
+    );
+  } else if (imageCount === 2) {
+    imageComponent = (
+      <div className={`h-full w-full bg-[#242424] rounded-md flex`}>
+        {data.map((data, index) => (
+          <Link to={`/event/${data._id}`} key={index} className="h-full min-w-full w-full wrapper2">
+            <img
+              key={index}
+              src={"/images/" + data.eventimage}
+              alt="Event"
+              className="object-cover h-full min-w-full w-full rounded-md"
+            />
+          </Link>
+        ))}
+      </div>
+    );
+  } else if (imageCount === 3) {
+    imageComponent = (
+      <div className={`h-full w-full bg-[#242424] rounded-md flex`}>
+        {data.map((data, index) => (
+          <Link to={`/event/${data._id}`} key={index} className="h-full min-w-full w-full wrapper3">
+            <img
+              key={index}
+              src={"/images/" + data.eventimage}
+              alt="Event"
+              className="object-cover h-full min-w-full w-full rounded-md"
+            />
+          </Link>
+        ))}
+      </div>
+    );
+  } else if (imageCount === 4) {
+    imageComponent = (
+      <div className={`h-full w-full bg-[#242424] rounded-md flex`}>
+        {data.map((data, index) => (
+          <Link to={`/event/${data._id}`} key={index} className="h-full min-w-full w-full wrapper4">
+            <img
+              key={index}
+              src={"/images/" + data.eventimage}
+              alt="Event"
+              className="object-cover h-full min-w-full w-full rounded-md"
+            />
+          </Link>
+        ))}
+      </div>
+    );
+  } else if (imageCount === 5) {
+    imageComponent = (
+      <div className={`h-full w-full bg-[#242424] rounded-md flex`}>
+        {data.map((data, index) => (
+          <Link to={`/event/${data._id}`} key={index} className="h-full min-w-full w-full wrapper5">
+            <img
+              key={index}
+              src={"/images/" + data.eventimage}
+              alt="Event"
+              className="object-cover h-full min-w-full w-full rounded-md"
+            />
+          </Link>
+        ))}
+      </div>
+    );
+  } else if (imageCount === 6) {
+    imageComponent = (
+      <div className={`h-full w-full bg-[#242424] rounded-md flex`}>
+        {data.map((data, index) => (
+          <Link to={`/event/${data._id}`} key={index} className="h-full min-w-full w-full wrapper6">
+            <img
+              key={index}
+              src={"/images/" + data.eventimage}
+              alt="Event"
+              className="object-cover h-full min-w-full w-full rounded-md"
+            />
+          </Link>
+        ))}
+      </div>
+    );
+  } else if (imageCount >= 7) {
+    imageComponent = (
+      <div className={`h-full w-full bg-[#242424] rounded-md flex`}>
+        {data.map((data, index) => (
+          <Link to={`/event/${data._id}`} key={index} className="h-full min-w-full w-full wrapper7">
+            <img
+              key={index}
+              src={"/images/" + data.eventimage}
+              alt="Event"
+              className="object-cover h-full min-w-full w-full rounded-md"
+            />
+          </Link>
+        ))}
+      </div>
+    );
+  }
+
   return (
     <div className="bg-[#191414] w-full h-full min-h-dvh font-poppins">
       <Nav />
       <div className="mx-auto max-w-[1250px] bg-[#191414] mt-[60px]">
         <div className="px-4 sm:px-6 lg:px-8 pt-1">
-          <div className="mt-[20px] h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] max-h-[400px] w-full">
-            <div className=" h-full w-full bg-[#242424] rounded-md"></div>
+          <div className="mt-[20px] h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] max-h-[400px] w-full translate-x-[-1/2] translate-y-[-1/2] rounded-md overflow-hidden">
+            {imageComponent}
           </div>
           <div className="my-[20px]">
             <p className="font-semibold text-[25px] sm:text-[30px] md:text-[35px] lg:text-[40px] text-[#1DB954]">
@@ -56,7 +167,7 @@ function Home() {
             >
               <div className="min-h-[275px] h-[275px] sm:h-[275px] md:h-[350px] lg:h-[350px] max-w-[770px] w-full bg-[#242424] rounded-md">
                 <img
-                  src={"./images/" + firstEvent.eventimage}
+                  src={"/images/" + firstEvent.eventimage}
                   alt="Event"
                   className="object-cover h-full w-full rounded-md"
                 />
@@ -143,7 +254,6 @@ function Home() {
                             <p className="mr-[5px]">
                               {event.locationprovice},{event.locationcountry}
                             </p>
-                            
                           </div>
                         </div>
                       </div>

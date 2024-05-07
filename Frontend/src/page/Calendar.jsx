@@ -129,14 +129,11 @@ function Calendar() {
                     {randomEvent && randomEvent.artistname}
                   </p>
                   {randomEvent && (
-                    <a href={randomEvent.artistspotify}>
-                      <div className="mt-[20px] flex items-center w-[95px] h-[40px] md:w-[110px] md:h-[45px] bg-[#1DB954] justify-center rounded-md transition-all duration-300 hover:bg-[#1CAA4E]">
-                        <IconCom icon="spotify" size="20" />
-                        <p className="ml-[5px] text-[15px] md:text-[16px]">
-                          Spotify
-                        </p>
-                      </div>
-                    </a>
+                    <Link to={randomEvent.artistspotify} className="mt-[20px] flex items-center w-[95px] h-[40px] md:w-[110px] md:h-[45px] bg-[#1DB954] justify-center rounded-md 
+                    transition-all duration-300 hover:bg-[#1CAA4E]">
+                      <IconCom icon="spotify" size="20" />
+                      <p className="ml-[5px] text-[15px] md:text-[16px]">Spotify</p>
+                  </Link>
                   )}
                 </div>
               </div>
@@ -225,13 +222,12 @@ function Calendar() {
                           <p>Out of time</p>
                         )}
                       </div>
-                      <a
-                        href="/"
+                      <div
                         className="px-2 max-w-[500px] w-full flex items-center justify-end"
                       >
                         <p className="mr-[10px]">{data.locationcountry}</p>
                         <IconCom icon="marker" size="18" />
-                      </a>
+                      </div>
                     </div>
                   </div>
                   <div className="sm:hidden ml-2 sm:ml-4 md:ml-6 w-full">
@@ -242,13 +238,13 @@ function Calendar() {
                       <p className="my-[5px] text-[#8A8A8A] text-[14px] w-1/2">
                         {data.formattedCreatedAt}
                       </p>
-                      <a
+                      <div
                         href="/"
                         className="mr-[5px] w-1/2 flex items-center text-[#8A8A8A] text-[14px] justify-end"
                       >
                         <p className="mr-[10px]">{data.locationcountry}</p>
                         <IconCom icon="marker" size="14" />
-                      </a>
+                      </div>
                     </div>
                   </div>
                 </Link>
