@@ -205,12 +205,12 @@ function EditEvent() {
               <p className="hidden md:block text-[#1DB954] md:max-w-[500px] w-full font-medium text-[16px] truncate overflow-hidden whitespace-nowrap">
                 {id}-{initialEventname}
               </p>
-              <p className="block md:hidden text-[#1DB954] w-full font-medium text-[16px]">
+              <div className="block md:hidden text-[#1DB954] w-full font-medium text-[16px]">
                 <p>{id}</p>
                 <p className="max-w-[265px] w-full truncate overflow-hidden whitespace-nowrap">
                   {initialEventname}
                 </p>
-              </p>
+              </div>
               <p className="text-white font-semibold text-[20px]">Edit Event</p>
             </div>
           </div>
