@@ -172,7 +172,7 @@ function CreateEvent() {
                     <img
                       src={previewImage1}
                       alt="Preview 1"
-                      className="object-cover h-full w-full rounded-md absolute z-10"
+                      className="object-cover h-full w-full rounded-md absolute z-1"
                     />
                   )}
                 </div>
@@ -194,7 +194,7 @@ function CreateEvent() {
                     <img
                       src={previewImage2}
                       alt="Preview 2"
-                      className="object-cover h-full w-full rounded-md absolute z-10"
+                      className="object-cover h-full w-full rounded-md absolute z-1"
                     />
                   )}
                 </div>
