@@ -32,7 +32,7 @@ function CountdownTimer({ targetDate }) {
       };
     
       return (
-        <div>
+        <div className='text-[#8A8A8A]'>
           {timeLeft.days > 0 && (
             <span>
               {timeLeft.days} day&nbsp;

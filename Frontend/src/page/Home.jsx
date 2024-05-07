@@ -174,25 +174,26 @@ function Home() {
               </div>
               <div className=" max-w-full md:max-w-[500px] w-full max-h-[350px] h-full py-4 flex flex-col px-2 sm:px-4 md:px-6">
                 <p
-                  className="w-full min-w-[300px] max-w-[550px] mb-[15px] font-semibold text-[#1DB954] text-[26px] sm:text-[28px] 
-                    md:text-[33px] lg:text-[36px] truncate"
+                  className="w-full min-w-[300px] max-w-[550px] mb-[-10px] font-semibold text-[#1DB954] text-[28px] sm:text-[30px] 
+                    md:text-[35px] lg:text-[38px] truncate"
                 >
                   {firstEvent.eventname}
                 </p>
+                <p className="text-[#8A8A8A] font-light mb-[10px] text-[16px]">{firstEvent.artistname}</p>
                 <p className="text-white text-[16px] md:h-[100px] truncate">
                   {firstEvent.eventdetail}
                 </p>
-                <div className="mt-[40px] flex justify-between text-white text-[16px] font-medium">
+                <div className="mt-[40px] flex justify-between text-white text-[16px]">
                   <div className="flex items-center">
-                    <IconCom icon="clock" size="20" />
+                    <IconCom icon="clock" size="16" />
                     <div className="ml-[5px]">
                       <CountdownTimer targetDate={firstEvent.startsum} />
                     </div>
                   </div>
                   <div className="hover:text-[#1DB954]">
                     <div className="flex items-center">
-                      <p className="mr-[5px]">{firstEvent.locationgooglemap}</p>
-                      <IconCom icon="marker" size="20" />
+                      <p className="mr-[5px] text-[#8A8A8A]">{firstEvent.locationprovice},{firstEvent.locationcountry}</p>
+                      <IconCom icon="marker" size="16" />
                     </div>
                   </div>
                 </div>
@@ -211,7 +212,7 @@ function Home() {
                   <Link
                     key={index}
                     to={`/event/${event._id}`}
-                    className="bg-[#242424] rounded-md h-[350px] max-h-[350px] max-w-[340px] w-full md:mx-3 mb-4 md:mb-6 
+                    className="bg-[#242424] rounded-md h-[360px] max-h-[360px] max-w-[340px] w-full md:mx-3 mb-4 md:mb-6 
                     transition-all duration-300 hover:bg-[#191919] hover:outline-1 hover:outline hover:outline-[#1DB954]"
                   >
                     <div className="max-h-[220px] h-[220px] bg-[#242424] rounded-md">
@@ -222,36 +223,37 @@ function Home() {
                       />
                     </div>
                     <div className="px-2 sm:px-3 md:px-4">
-                      <p className="mt-[10px] truncate w-full font-semibold text-[#1DB954] text-[28px] sm:text-[30px] md:text-[32px] overflow-hidden whitespace-nowrap">
+                      <p className="mt-[5px] truncate w-full font-semibold mb-[-5px] text-[#1DB954] text-[28px] sm:text-[30px] md:text-[32px] overflow-hidden whitespace-nowrap">
                         {event.eventname}
                       </p>
-                      <div className="mt-[40px] hidden md:flex justify-between text-white text-[16px] font-medium">
+                      <p className="text-[16px] font-light text-[#8A8A8A]">{event.artistname}</p>
+                      <div className="mt-[20px] hidden md:flex justify-between text-white text-[16px]">
                         <div className="flex items-center">
-                          <IconCom icon="clock" size="20" />
+                          <IconCom icon="clock" size="16" />
                           <div className="ml-[5px]">
                             <CountdownTimer targetDate={event.startsum} />
                           </div>
                         </div>
                         <div className="">
-                          <div className="flex">
-                            <p className="mr-[5px]">
+                          <div className="flex items-center">
+                            <p className="mr-[5px] text-[#8A8A8A]">
                               {event.locationprovice},{event.locationcountry}
                             </p>
-                            <IconCom icon="marker" size="20" />
+                            <IconCom icon="marker" size="16" />
                           </div>
                         </div>
                       </div>
-                      <div className="flex md:hidden flex-col text-white text-[16px] font-medium">
+                      <div className="flex md:hidden flex-col text-white text-[16px]">
                         <div className="flex items-center mt-1">
-                          <IconCom icon="clock" size="20" />
+                          <IconCom icon="clock" size="16" />
                           <div className="ml-[5px]">
                             <CountdownTimer targetDate={event.startsum} />
                           </div>
                         </div>
                         <div className="">
-                          <div className="flex mt-2">
-                            <IconCom icon="marker" size="20" />
-                            <p className="mr-[5px]">
+                          <div className="flex mt-2 items-center">
+                            <IconCom icon="marker" size="16" />
+                            <p className="ml-[5px] text-[#8A8A8A]">
                               {event.locationprovice},{event.locationcountry}
                             </p>
                           </div>
