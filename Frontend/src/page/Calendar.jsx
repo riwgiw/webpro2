@@ -202,7 +202,7 @@ function Calendar() {
                 <Link
                   to={`/event/${data._id}`}
                   key={index}
-                  className="transition-all duration-300 text-[16px] text-white px-2 sm:px-4 md:px-6 max-w-[1210px] w-full min-h-[80px] max-h-[80px] h-full 
+                  className="transition-all duration-300 text-[16px] text-white px-1 sm:px-2 md:px-4 max-w-[1210px] w-full min-h-[80px] max-h-[80px] h-full 
                   sm:min-h-[90px] sm:max-h-[90px] md:min-h-[90px] md:max-h-[90px] hover:bg-[#242424] rounded-lg flex flex-row items-center my-3"
                 >
                   <div
@@ -215,9 +215,9 @@ function Calendar() {
                       className="object-cover h-full w-full rounded-md"
                     />
                   </div>
-                  <div className="hidden sm:block ml-[15px] w-full">
-                    <div className="flex">
-                      <p className="px-2 w-full truncate sm:min-w-[180px] sm:max-w-[180px] md:min-w-[270px] md:max-w-[270px] overflow-hidden whitespace-nowrap">
+                  <div className="hidden sm:block ml-2 w-full">
+                    <div className="flex items-center">
+                      <p className="px-1 w-full truncate sm:min-w-[100px] sm:max-w-[100px] md:min-w-[200px] md:max-w-[200px] lg:min-w-[300px] lg:max-w-[300px] xl:min-w-[400px] xl:max-w-[400px] 2xl:min-w-[500px] 2xl:max-w-[500px] overflow-hidden whitespace-nowrap">
                         {data.eventname}
                       </p>
                       <div className="min-w-[90px] max-w-[90px] w-full mx-2">
@@ -263,8 +263,8 @@ function Calendar() {
                           <p>Out of time</p>
                         )}
                       </div>
-                      <div className="px-2 min-w-[100px] max-w-[300px] w-full flex items-center justify-end">
-                        <p className="mr-[10px]">{data.locationcountry}</p>
+                      <div className="pl-2 min-w-[100px] max-w-[300px] w-full flex items-center justify-end">
+                        <p className="mr-[5px]">{data.locationprovice},{data.locationcountry}</p>
                         <IconCom icon="marker" size="16" />
                       </div>
                     </div>
@@ -281,7 +281,7 @@ function Calendar() {
                         href="/"
                         className="mr-[5px] max-w-[200px] w-full flex items-center text-[#8A8A8A] text-[14px] justify-end"
                       >
-                        <p className="mr-[10px]">{data.locationcountry}</p>
+                        <p className="mr-[5px]">{data.locationprovice},{data.locationcountry}</p>
                         <IconCom icon="marker" size="14" />
                       </div>
                     </div>
