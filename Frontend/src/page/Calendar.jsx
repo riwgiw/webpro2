@@ -15,6 +15,9 @@ import interactionPlugin from "@fullcalendar/interaction";
 import axios from "axios";
 import { useNavigate, useParams, Link } from "react-router-dom";
 
+import "leaflet/dist/leaflet.css";
+import { MapContainer, TileLayer , Marker, Popup } from "react-leaflet";
+
 function Calendar() {
   const [Allevents, setAllevents] = useState(false);
   const [showMore, setShowMore] = useState(false);
@@ -160,6 +163,26 @@ function Calendar() {
             />
           </div>
 
+          <p className="my-[20px] text-[#1DB954] font-semibold text-[35px] md:text-[40px]">
+            Map
+          </p>
+          <div className="max-w-[1210px] h-[700px] w-full rounded-md bg-white p-1">
+            <MapContainer
+              className="h-full"
+              center={[13, 100]}
+              zoom={6}
+              scrollWheelZoom={false}
+            >
+              <TileLayer
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              <Marker position={[13, 100]}>
+
+              </Marker>
+            </MapContainer>
+          </div>
+
           <div className="my-[20px] flex font-semibold items-center">
             {Allevents ? (
               <>
@@ -264,7 +287,9 @@ function Calendar() {
                         )}
                       </div>
                       <div className="pl-2 min-w-[100px] max-w-[300px] w-full flex items-center justify-end">
-                        <p className="mr-[5px]">{data.locationprovice},{data.locationcountry}</p>
+                        <p className="mr-[5px]">
+                          {data.locationprovice},{data.locationcountry}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -280,7 +305,9 @@ function Calendar() {
                         href="/"
                         className="mr-[5px] max-w-[200px] w-full flex items-center text-[#8A8A8A] text-[14px] justify-end"
                       >
-                        <p className="mr-[5px]">{data.locationprovice},{data.locationcountry}</p>
+                        <p className="mr-[5px]">
+                          {data.locationprovice},{data.locationcountry}
+                        </p>
                       </div>
                     </div>
                   </div>
