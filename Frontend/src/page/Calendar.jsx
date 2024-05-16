@@ -265,7 +265,6 @@ function Calendar() {
                       </div>
                       <div className="pl-2 min-w-[100px] max-w-[300px] w-full flex items-center justify-end">
                         <p className="mr-[5px]">{data.locationprovice},{data.locationcountry}</p>
-                        <IconCom icon="marker" size="16" />
                       </div>
                     </div>
                   </div>
@@ -282,7 +281,6 @@ function Calendar() {
                         className="mr-[5px] max-w-[200px] w-full flex items-center text-[#8A8A8A] text-[14px] justify-end"
                       >
                         <p className="mr-[5px]">{data.locationprovice},{data.locationcountry}</p>
-                        <IconCom icon="marker" size="14" />
                       </div>
                     </div>
                   </div>
