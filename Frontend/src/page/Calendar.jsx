@@ -16,7 +16,7 @@ import axios from "axios";
 import { useNavigate, useParams, Link } from "react-router-dom";
 
 import "leaflet/dist/leaflet.css";
-import { MapContainer, TileLayer , Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, Tooltip } from "react-leaflet";
 
 function Calendar() {
   const [Allevents, setAllevents] = useState(false);
@@ -52,6 +52,7 @@ function Calendar() {
         setDefaultdata(filteredData);
         setUpData(filteredData);
         setAllData(sortedData);
+
         const res = await axios.get("http://localhost:3002");
         if (res.data.valid) {
           navigate(`/calendar/${artistname}`);
@@ -110,6 +111,25 @@ function Calendar() {
     color: color(event.eventtype),
   }));
 
+  const markers = alldata.map((data, index) => (
+    <Marker
+      key={index}
+      position={[data.locationlatitude, data.locationlongitude]}
+    >
+      <Tooltip direction="right">{data.eventname}</Tooltip>
+      <Popup>
+        <p className="font-semibold text-[15px]">{data.eventname}</p>
+        <img
+          src={"/images/" + data.eventimage}
+          alt="Event"
+          className="rounded-md my-1"
+        />
+        <CountdownTimer targetDate={data.startsum} />
+        <a href={`/event/${data._id}`}>Read more</a>
+      </Popup>
+    </Marker>
+  ));
+
   return (
     <div className="bg-[#191414] w-full h-full min-h-dvh font-poppins">
       <Nav />
@@ -166,9 +186,9 @@ function Calendar() {
           <p className="my-[20px] text-[#1DB954] font-semibold text-[35px] md:text-[40px]">
             Map
           </p>
-          <div className="max-w-[1210px] h-[700px] w-full rounded-md bg-white p-1">
+          <div className="z-0 max-w-[1210px] h-[700px] w-full rounded-md bg-white p-1">
             <MapContainer
-              className="h-full"
+              className="z-0 h-full rounded-md"
               center={[13, 100]}
               zoom={6}
               scrollWheelZoom={false}
@@ -177,9 +197,7 @@ function Calendar() {
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
-              <Marker position={[13, 100]}>
-
-              </Marker>
+              {markers}
             </MapContainer>
           </div>
 

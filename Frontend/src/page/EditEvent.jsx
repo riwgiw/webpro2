@@ -29,6 +29,9 @@ function EditEvent() {
   const [locationcountry, setLocationcountry] = useState("");
   const [locationembed, setLocationembed] = useState("");
   const [locationgooglemap, setLocationgooglemap] = useState("");
+  const [locationlatitude, setLocationlatitude] = useState("");
+  const [locationlongitude, setLocationlongitude] = useState("");
+
 
   const [startday, setStartday] = useState("");
   const [startmonth, setStartmonth] = useState("");
@@ -53,7 +56,6 @@ function EditEvent() {
         const response = await axios.get(
           "http://localhost:3002/get-event/" + id
         );
-        console.log(response);
         setInitialEventname(response.data.eventname);
         setEventname(response.data.eventname);
         setEventdetail(response.data.eventdetail);
@@ -65,6 +67,8 @@ function EditEvent() {
         setLocationcountry(response.data.locationcountry);
         setLocationembed(response.data.locationembed);
         setLocationgooglemap(response.data.locationgooglemap);
+        setLocationlatitude(response.data.locationlatitude);
+        setLocationlongitude(response.data.locationlongitude);
         setStartday(response.data.startday);
         setStartmonth(response.data.startmonth);
         setStartyear(response.data.startyear);
@@ -131,6 +135,8 @@ function EditEvent() {
       locationcountry,
       locationembed,
       locationgooglemap,
+      locationlatitude,
+      locationlongitude,
       startday,
       startmonth,
       startyear,
@@ -383,6 +389,32 @@ function EditEvent() {
                       onChange={(e) => setLocationgooglemap(e.target.value)}
                       name="locationgooglemap"
                       placeholder="Link Google map"
+                      className="h-[40px] w-full rounded-md pl-2 bg-[#191414] text-white focus:outline-none
+                      focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
+                    />
+                  </div>
+                </div>
+                <div className="mt-[15px] mb-[10px] flex">
+                  <div className="w-1/2 pr-[5px]">
+                    <p className="mb-[10px]">Latitude</p>
+                    <input
+                      type="text"
+                      value={locationlatitude}
+                      onChange={(e) => setLocationlatitude(e.target.value)}
+                      name="locationlatitude"
+                      placeholder="Latitude"
+                      className="h-[40px] w-full rounded-md pl-2 bg-[#191414] text-white focus:outline-none
+                      focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
+                    />
+                  </div>
+                  <div className="pl-[5px] w-1/2">
+                    <p className="mb-[10px]">Longitude</p>
+                    <input
+                      type="text"
+                      value={locationlongitude}
+                      onChange={(e) => setLocationlongitude(e.target.value)}
+                      name="locationlongitude"
+                      placeholder="Longitude"
                       className="h-[40px] w-full rounded-md pl-2 bg-[#191414] text-white focus:outline-none
                       focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                     />

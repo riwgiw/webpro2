@@ -49,6 +49,14 @@ const EventSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    locationlatitude: {
+        type: String,
+        required: true
+    },
+    locationlongitude: {
+        type: String,
+        required: true
+    },
     startday: {
         type: String,
         required: true

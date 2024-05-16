@@ -25,6 +25,8 @@ function CreateEvent() {
     locationcountry: "",
     locationembed: "",
     locationgooglemap: "",
+    locationlatitude: "",
+    locationlongitude: "",
     startday: "",
     startmonth: "",
     startyear: "",
@@ -312,6 +314,30 @@ function CreateEvent() {
                       onChange={handleInput}
                       name="locationgooglemap"
                       placeholder="Link Google map"
+                      className="h-[40px] w-full rounded-md pl-2 bg-[#191414] text-white focus:outline-none
+                    focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
+                    />
+                  </div>
+                </div>
+                <div className="mt-[15px] mb-[10px] flex">
+                  <div className="w-1/2 pr-[5px]">
+                    <p className="mb-[10px]">Latitude</p>
+                    <input
+                      type="text"
+                      onChange={handleInput}
+                      name="locationlatitude"
+                      placeholder="Latitude"
+                      className="h-[40px] w-full rounded-md pl-2 bg-[#191414] text-white focus:outline-none
+                    focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
+                    />
+                  </div>
+                  <div className="pl-[5px] w-1/2">
+                    <p className="mb-[10px]">Longitude</p>
+                    <input
+                      type="text"
+                      onChange={handleInput}
+                      name="locationlongitude"
+                      placeholder="Longitude"
                       className="h-[40px] w-full rounded-md pl-2 bg-[#191414] text-white focus:outline-none
                     focus:ring-0 focus:ring-[#191414] focus:ring-offset-2 focus:ring-offset-[#1DB954]"
                     />
