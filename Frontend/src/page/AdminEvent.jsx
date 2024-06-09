@@ -159,7 +159,7 @@ function AdminEvent() {
                             key={index}
                             src={"./images/" + event.eventimage}
                             alt="Event"
-                            className="object-cover h-full w-full rounded-md"
+                            className="object-cover min-h-[45px] min-w-[45px] h-full w-full rounded-md"
                           />
                         </div>
                         <p className="truncate overflow-hidden whitespace-nowrap">
@@ -234,7 +234,7 @@ function AdminEvent() {
                             key={index}
                             src={"./images/" + event.eventimage}
                             alt="Event"
-                            className="object-cover h-full w-full rounded-md"
+                            className="object-cover min-h-[45px] min-w-[45px] h-full w-full rounded-md"
                           />
                         </div>
                         <div className="flex flex-col max-w-[120px] ">

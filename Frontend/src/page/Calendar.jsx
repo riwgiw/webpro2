@@ -247,13 +247,12 @@ function Calendar() {
                   sm:min-h-[90px] sm:max-h-[90px] md:min-h-[90px] md:max-h-[90px] hover:bg-[#242424] rounded-lg flex flex-row items-center my-3"
                 >
                   <div
-                    className="min-h-[60px] min-w-[60px] max-h-[60px] max-w-[60px] sm:min-h-[60px] sm:min-w-[60px] sm:max-h-[60px] sm:max-w-[60px] 
-                            md:min-h-[60px] md:min-w-[60px] md:max-h-[60px] md:max-w-[60px] h-full w-full bg-[#1DB954] rounded-md"
+                    className="min-h-[60px] min-w-[60px] max-h-[60px] max-w-[60px] h-full w-full bg-[#1DB954] rounded-md"
                   >
                     <img
                       src={"/images/" + data.eventimage}
                       alt="Event"
-                      className="object-cover h-full w-full rounded-md"
+                      className="object-cover min-h-[60px] min-w-[60px] h-full w-full rounded-md"
                     />
                   </div>
                   <div className="hidden sm:block ml-2 w-full">

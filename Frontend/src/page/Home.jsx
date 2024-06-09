@@ -208,7 +208,10 @@ function Home() {
           <div className="">
             <div className="min-h-[830px] w-full flex flex-col justify-start">
               <div className="min-h-[750px] w-full grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 grid gap-2 md:gap-3">
-                {data.slice(1).map((event, index) => (
+                {data.length > 0 ? (
+              data
+                .slice(0, showMore ? data.length : 6)  // Dynamically adjust based on `showMore`
+                .map((event, index) => (
                   <Link
                     key={index}
                     to={`/event/${event._id}`}
@@ -261,7 +264,10 @@ function Home() {
                       </div>
                     </div>
                   </Link>
-                ))}
+                ))
+              ) : (
+                <p className="text-[#8A8A8A] text-[18px] text-center">No events found.</p>
+              )}
               </div>
 
               {data.length > 7 && (
