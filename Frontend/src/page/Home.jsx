@@ -156,7 +156,7 @@ function Home() {
             {imageComponent}
           </div>
           <div className="my-[20px]">
-            <p className="font-medium text-[25px] sm:text-[30px] md:text-[35px] lg:text-[40px] text-[#1DB954]">
+            <p className="font-semibold text-[25px] sm:text-[30px] md:text-[35px] lg:text-[40px] text-[#1DB954]">
               Upcoming Event
             </p>
           </div>
@@ -201,7 +201,7 @@ function Home() {
             </Link>
           )}
           <div className="my-[20px]">
-            <p className="font-medium text-[25px] sm:text-[30px] md:text-[35px] lg:text-[40px] text-[#1DB954]">
+            <p className="font-semibold text-[25px] sm:text-[30px] md:text-[35px] lg:text-[40px] text-[#1DB954]">
               All Events
             </p>
           </div>

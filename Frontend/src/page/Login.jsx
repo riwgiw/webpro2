@@ -57,7 +57,7 @@ function Login() {
         className="mx-auto max-w-[1250px] bg-[#191414] mt-[60px] pt-[40px]"
       >
         <div className="mx-auto rounded-md bg-[#242424] h-[420px] w-[420px] flex flex-col items-center">
-          <p className="text-[#1DB954] font-medium text-[35px] mt-[45px]">
+          <p className="text-[#1DB954] font-semibold text-[35px] mt-[45px]">
             Login
           </p>
           <a

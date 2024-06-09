@@ -168,7 +168,7 @@ function Calendar() {
             </div>
           </div>
 
-          <p className="my-[20px] text-[#1DB954] font-medium text-[35px] md:text-[40px]">
+          <p className="my-[20px] text-[#1DB954] font-semibold text-[35px] md:text-[40px]">
             Calendar
           </p>
 
@@ -183,7 +183,7 @@ function Calendar() {
             />
           </div>
 
-          <p className="my-[20px] text-[#1DB954] font-medium text-[35px] md:text-[40px]">
+          <p className="my-[20px] text-[#1DB954] font-semibold text-[35px] md:text-[40px]">
             Map
           </p>
           <div className="z-0 max-w-[1210px] h-[700px] w-full rounded-md bg-white p-1">
