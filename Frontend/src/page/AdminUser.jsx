@@ -72,11 +72,11 @@ function AdminUser() {
 
 
   return (
-    <div className="bg-[#191414] w-full h-full min-h-dvh font-poppins">
+    <div className="bg-[#191414] w-full h-full min-h-dvh font-kanit">
       <Nav className='z-20' />
       <div className="mt-[60px] w-full min-h-[60px] bg-[#242424] fixed top-0 z-10">
         <div className="max-w-[1250px] mx-auto h-full bg-[#242424] px-4 sm:px-6 lg:px-8">
-          <div className="h-[60px] flex items-center justify-center sm:justify-start  text-white font-semibold">
+          <div className="h-[60px] flex items-center justify-center sm:justify-start  text-white font-medium">
             <button className="transition-all duration-500 px-3 py-2 mr-[20px] rounded-lg bg-black text-[17px] sm:text-[18px] md:text-[20px]">
               Manage Users
             </button>
@@ -87,7 +87,7 @@ function AdminUser() {
         </div>
       </div>
       <div className="mt-[120px] px-2 sm:px-4 lg:px-6 max-w-[1250px] mx-auto h-full">
-        <p className="font-semibold text-[#1DB954] text-[35px] md:text-[40px] my-[30px]">
+        <p className="font-medium text-[#1DB954] text-[35px] md:text-[40px] my-[30px]">
           Manage Users
         </p>
         <div className="min-h-[840px] max-h-[840px] min-w-[382px] max-w-[1210px] h-full w-full rounded-md flex flex-col">
@@ -141,7 +141,7 @@ function AdminUser() {
                       <td className="h-[70px] table-cell text-left align-middle px-4">
                         {user.email}
                       </td>
-                      <td className="h-[70px] table-cell text-left align-middle px-4 text-[13px] font-semibold">
+                      <td className="h-[70px] table-cell text-left align-middle px-4 text-[13px] font-medium">
                         {user.role === "admin" ? (
                           <div className="px-2 py-0 rounded-2xl bg-[#172554] flex items-center justify-center border border-solid border-[#8A8A8A]">
                             <p>ADMIN</p>
@@ -178,10 +178,10 @@ function AdminUser() {
                       <td className="h-[70px] table-cell text-left align-middle px-4">
                         <div className="flex flex-col">
                           <p className="text-white">{user.username}</p>
-                          <p className="font-light">{user.email}</p>
+                          <p className="font-extralight">{user.email}</p>
                         </div>
                       </td>
-                      <td className="h-[70px] table-cell text-left align-middle px-4 text-[13px] font-semibold">
+                      <td className="h-[70px] table-cell text-left align-middle px-4 text-[13px] font-medium">
                         <div className="flex items-center text-white justify-end">
                           {user.role === "admin" ? (
                             <div className="px-2 py-0 rounded-2xl bg-[#172554] flex items-center justify-center border border-solid border-[#8A8A8A]">
@@ -239,7 +239,7 @@ function AdminUser() {
           <div className="fixed z-20 bottom-0 inset-x-0 flex items-center justify-center mb-5">
             <div className="px-5 py-3 w-full h-full max-w-[420px] max-h-[170px] bg-[#191919] rounded-md shadow-lg text-white">
               <div className="flex justify-between py-2">
-                <p className="font-semibold text-[20px]">Select</p>
+                <p className="font-medium text-[20px]">Select</p>
                 <button
                   onClick={togglePopup}
                   className="flex items-center justify-center w-[30px] h-[30px] rounded-full bg-[#242424] hover:bg-[#942423]"

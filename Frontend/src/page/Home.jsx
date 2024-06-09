@@ -148,7 +148,7 @@ function Home() {
   }
 
   return (
-    <div className="bg-[#191414] w-full h-full min-h-dvh font-poppins">
+    <div className="bg-[#191414] w-full h-full min-h-dvh font-kanit">
       <Nav />
       <div className="mx-auto max-w-[1250px] bg-[#191414] mt-[60px]">
         <div className="px-4 sm:px-6 lg:px-8 pt-1">
@@ -156,7 +156,7 @@ function Home() {
             {imageComponent}
           </div>
           <div className="my-[20px]">
-            <p className="font-semibold text-[25px] sm:text-[30px] md:text-[35px] lg:text-[40px] text-[#1DB954]">
+            <p className="font-medium text-[25px] sm:text-[30px] md:text-[35px] lg:text-[40px] text-[#1DB954]">
               Upcoming Event
             </p>
           </div>
@@ -174,12 +174,12 @@ function Home() {
               </div>
               <div className=" max-w-full md:max-w-[500px] w-full max-h-[350px] h-full py-4 flex flex-col px-2 sm:px-4 md:px-6">
                 <p
-                  className="w-full min-w-[300px] max-w-[550px] mb-[-10px] font-semibold text-[#1DB954] text-[28px] sm:text-[30px] 
+                  className="w-full min-w-[300px] max-w-[550px] mb-[-10px] font-medium text-[#1DB954] text-[28px] sm:text-[30px] 
                     md:text-[35px] lg:text-[38px] truncate"
                 >
                   {firstEvent.eventname}
                 </p>
-                <p className="text-[#8A8A8A] font-light mb-[10px] text-[20px]">{firstEvent.artistname}</p>
+                <p className="text-[#8A8A8A] font-extralight mb-[10px] text-[20px]">{firstEvent.artistname}</p>
                 <p className="text-white text-[16px] md:h-[100px] truncate">
                   {firstEvent.eventdetail}
                 </p>
@@ -201,7 +201,7 @@ function Home() {
             </Link>
           )}
           <div className="my-[20px]">
-            <p className="font-semibold text-[25px] sm:text-[30px] md:text-[35px] lg:text-[40px] text-[#1DB954]">
+            <p className="font-medium text-[25px] sm:text-[30px] md:text-[35px] lg:text-[40px] text-[#1DB954]">
               All Events
             </p>
           </div>
@@ -226,10 +226,10 @@ function Home() {
                       />
                     </div>
                     <div className="px-2 sm:px-3 md:px-4">
-                      <p className="mt-[5px] truncate w-full font-semibold mb-[-5px] text-[#1DB954] text-[28px] sm:text-[30px] md:text-[32px] overflow-hidden whitespace-nowrap">
+                      <p className="mt-[5px] truncate w-full font-medium mb-[-5px] text-[#1DB954] text-[28px] sm:text-[30px] md:text-[32px] overflow-hidden whitespace-nowrap">
                         {event.eventname}
                       </p>
-                      <p className="text-[16px] font-light text-[#8A8A8A]">{event.artistname}</p>
+                      <p className="text-[16px] font-extralight text-[#8A8A8A]">{event.artistname}</p>
                       <div className="mt-[20px] hidden md:flex justify-between text-white text-[16px]">
                         <div className="flex items-center">
                           <IconCom icon="clock" size="16" />
@@ -273,7 +273,7 @@ function Home() {
               {data.length > 7 && (
                 <div className="flex justify-center items-end w-full max-h-[80px] h-[80px]">
                   <div
-                    className="px-4 py-2 rounded-md bg-[#1DB954] text-white text-[20px] font-semibold cursor-pointer"
+                    className="px-4 py-2 rounded-md bg-[#1DB954] text-white text-[20px] font-medium cursor-pointer"
                     onClick={handleShowMoreClick}
                   >
                     <p>{showMore ? "Show less" : "Show more"}</p>

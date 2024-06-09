@@ -50,14 +50,14 @@ function Login() {
   };
 
   return (
-    <div className="bg-[#191414] w-full h-full min-h-dvh font-poppins">
+    <div className="bg-[#191414] w-full h-full min-h-dvh font-kanit">
       <Nav />
       <form
         onSubmit={handleSubmit}
         className="mx-auto max-w-[1250px] bg-[#191414] mt-[60px] pt-[40px]"
       >
         <div className="mx-auto rounded-md bg-[#242424] h-[420px] w-[420px] flex flex-col items-center">
-          <p className="text-[#1DB954] font-bold text-[35px] mt-[45px]">
+          <p className="text-[#1DB954] font-medium text-[35px] mt-[45px]">
             Login
           </p>
           <a
@@ -84,7 +84,7 @@ function Login() {
           />
           <button
             type="submit"
-            className="h-[40px] w-[340px] rounded-3xl mt-[40px] bg-[#1DB954] text-center font-semibold text-white"
+            className="h-[40px] w-[340px] rounded-3xl mt-[40px] bg-[#1DB954] text-center font-medium text-white"
           >
             Log in
           </button>

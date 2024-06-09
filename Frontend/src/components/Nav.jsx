@@ -58,7 +58,7 @@ function Nav() {
   };
 
   return (
-    <div className={`w-full min-h-[60px] bg-[#1DB954] font-poppins text-white top-0 z-50 ${open ? 'sticky mb-[-60px] !important' : 'fixed'}`}>
+    <div className={`w-full min-h-[60px] bg-[#1DB954] font-kanit text-white top-0 z-50 ${open ? 'sticky mb-[-60px] !important' : 'fixed'}`}>
       <div className="max-w-[1250px] mx-auto h-full bg-[#1DB954] px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-[60px]">
           <div className="flex items-center">
@@ -76,7 +76,7 @@ function Nav() {
                       <a
                         href="/manageuser"
                         className="text-slate-200 hover:bg-[#1CAA4E] transition-all duration-500
-                    hover:text-white block px-3 py-2 rounded-md text-[20px] font-semibold text-start"
+                    hover:text-white block px-3 py-2 rounded-md text-[20px] font-medium text-start"
                       >
                         Admin Manager
                       </a>
@@ -87,15 +87,15 @@ function Nav() {
                     className="flex items-center px-3 py-2 transition-all duration-500 text-slate-200 hover:bg-[#1CAA4E] hover:text-white rounded-md"
                   >
                     <IconCom icon="search" size="16" />
-                    <p className="ml-2 text-[20px] font-semibold">Search</p>
+                    <p className="ml-2 text-[20px] font-medium">Search</p>
                   </button>
                   
-                  <p className="text-slate-200 text-[20px] font-semibold px-3 py-2">
-                    {name.toUpperCase()}
+                  <p className="text-slate-200 text-[20px] font-medium px-3 py-2">
+                    Welcome, {name.toUpperCase()}
                   </p>
                   <button
                     onClick={handleLogout}
-                    className="transition-all duration-500 bg-[#942423] text-slate-200 hover:bg-[#7D1D1C] hover:text-white px-3 py-2 rounded-md text-[20px] font-semibold"
+                    className="transition-all duration-500 bg-[#942423] text-slate-200 hover:bg-[#7D1D1C] hover:text-white px-3 py-2 rounded-md text-[20px] font-medium"
                   >
                     Logout
                   </button>
@@ -104,13 +104,13 @@ function Nav() {
                 <>
                   <a
                     href="/signup"
-                    className="transition-all duration-500 bg-black text-slate-200 hover:bg-slate-900 hover:text-white px-3 py-2 rounded-md text-[20px] font-semibold"
+                    className="transition-all duration-500 bg-black text-slate-200 hover:bg-slate-900 hover:text-white px-3 py-2 rounded-md text-[20px] font-medium"
                   >
                     Sign up
                   </a>
                   <a
                     href="/login"
-                    className="transition-all duration-500 text-slate-200 hover:bg-[#1CAA4E] hover:text-white px-3 py-2 rounded-md text-[20px] font-semibold"
+                    className="transition-all duration-500 text-slate-200 hover:bg-[#1CAA4E] hover:text-white px-3 py-2 rounded-md text-[20px] font-medium"
                   >
                     Login
                   </a>
@@ -148,7 +148,7 @@ function Nav() {
                     <a
                       href="/manageuser"
                       className="text-slate-200 hover:bg-[#1CAA4E] 
-                    hover:text-white block px-3 py-2 rounded-md text-[20px] font-semibold text-start"
+                    hover:text-white block px-3 py-2 rounded-md text-[20px] font-medium text-start"
                     >
                       Admin Manager
                     </a>
@@ -157,17 +157,17 @@ function Nav() {
                 <button 
                 onClick={togglePopup}
                 className="text-slate-200 hover:bg-[#1CAA4E] 
-                hover:text-white flex px-3 py-2 rounded-md text-[20px] font-semibold text-start flex-row w-full items-center">
+                hover:text-white flex px-3 py-2 rounded-md text-[20px] font-medium text-start flex-row w-full items-center">
                   <IconCom icon="search" size='16' />
                   <p className="ml-2">Search</p>
                 </button>
-                <p className="text-slate-200 text-[20px] font-semibold block px-3 py-2 text-start">
+                <p className="text-slate-200 text-[20px] font-medium block px-3 py-2 text-start">
                   {name.toUpperCase()}
                 </p>
                 <a
                   onClick={handleLogout}
                   className="text-slate-200 hover:bg-[#7D1D1C] bg-[#942423]
-                  hover:text-white block px-3 py-2 rounded-md text-[20px] font-semibold text-start"
+                  hover:text-white block px-3 py-2 rounded-md text-[20px] font-medium text-start"
                 >
                   Logout
                 </a>
@@ -176,13 +176,13 @@ function Nav() {
               <>
                 <a
                   href="/signup"
-                  className="transition-all duration-500 bg-black block text-slate-200 hover:bg-slate-900 hover:text-white px-3 py-2 rounded-md text-[20px] font-semibold text-start"
+                  className="transition-all duration-500 bg-black block text-slate-200 hover:bg-slate-900 hover:text-white px-3 py-2 rounded-md text-[20px] font-medium text-start"
                 >
                   Sign up
                 </a>
                 <a
                   href="/login"
-                  className="transition-all duration-500 block text-slate-200 hover:bg-[#1CAA4E] hover:text-white px-3 py-2 rounded-md text-[20px] font-semibold text-start"
+                  className="transition-all duration-500 block text-slate-200 hover:bg-[#1CAA4E] hover:text-white px-3 py-2 rounded-md text-[20px] font-medium text-start"
                 >
                   Login
                 </a>
@@ -202,7 +202,7 @@ function Nav() {
           <div className="z-50 fixed top-20 inset-x-0 flex items-center justify-center mb-5">
             <div className="px-5 py-3 w-full h-full max-w-[420px] max-h-[170px] bg-[#191919] rounded-md shadow-lg text-white">
               <div className="flex justify-between py-2">
-                <p className="font-semibold text-[20px]">Search</p>
+                <p className="font-medium text-[20px]">Search</p>
                 <button
                   onClick={togglePopup}
                   className="flex items-center justify-center w-[30px] h-[30px] rounded-full bg-[#242424] hover:bg-[#942423]"

@@ -70,11 +70,11 @@ function AdminEvent() {
   };
 
   return (
-    <div className="bg-[#191414] w-full h-full min-h-dvh font-poppins">
+    <div className="bg-[#191414] w-full h-full min-h-dvh font-kanit">
       <Nav />
       <div className="w-full min-h-[60px] bg-[#242424] mt-[60px] fixed top-0">
         <div className="max-w-[1250px] mx-auto h-full bg-[#242424] px-4 sm:px-6 lg:px-8">
-          <div className="h-[60px] flex items-center justify-center sm:justify-start  text-white font-semibold">
+          <div className="h-[60px] flex items-center justify-center sm:justify-start  text-white font-medium">
             <Link to='/manageuser' className="transition-all duration-500 px-3 py-2 hover:bg-[#191919] rounded-lg text-[16px] sm:text-[18px] md:text-[20px]">
               Manage Users
             </Link>
@@ -87,12 +87,12 @@ function AdminEvent() {
       <div className="mt-[120px] px-2 sm:px-4 lg:px-6 max-w-[1250px] mx-auto h-full">
         <div className="hidden sm:block my-[30px]">
           <div className="flex justify-between items-center">
-            <p className="font-semibold text-[#1DB954] text-[35px] md:text-[40px]">
+            <p className="font-medium text-[#1DB954] text-[35px] md:text-[40px]">
               Manage Events
             </p>
             <Link
               to="/createevent"
-              className="min-h-[40px] max-h-[40px] h-full px-2 bg-[#1DB954] flex justify-center items-center rounded-md text-white font-semibold transition-all duration-300 hover:bg-[#1CAA4E]"
+              className="min-h-[40px] max-h-[40px] h-full px-2 bg-[#1DB954] flex justify-center items-center rounded-md text-white font-medium transition-all duration-300 hover:bg-[#1CAA4E]"
             >
               + Create Events
             </Link>
@@ -100,10 +100,10 @@ function AdminEvent() {
         </div>
         <div className="block sm:hidden my-[30px]">
           <div className="flex flex-col">
-            <p className="font-semibold text-[#1DB954] text-[35px] md:text-[40px] mb-[20px]">
+            <p className="font-medium text-[#1DB954] text-[35px] md:text-[40px] mb-[20px]">
               Manage Events
             </p>
-            <Link to='/createevent' className="min-h-[40px] max-h-[40px] h-full min-w-[150px] max-w-[150px] w-full bg-[#1DB954] flex justify-center items-center rounded-md text-white font-semibold">
+            <Link to='/createevent' className="min-h-[40px] max-h-[40px] h-full min-w-[150px] max-w-[150px] w-full bg-[#1DB954] flex justify-center items-center rounded-md text-white font-medium">
               + Create Events
             </Link>
           </div>
@@ -170,7 +170,7 @@ function AdminEvent() {
                     <td className="h-[70px] table-cell text-left align-middle px-4">
                       {event.artistname}
                     </td>
-                    <td className="h-[70px] table-cell text-left align-middle px-4 text-[13px] font-semibold">
+                    <td className="h-[70px] table-cell text-left align-middle px-4 text-[13px] font-medium">
                       {(() => {
                         switch (event.eventtype) {
                           case "concert":
@@ -241,11 +241,11 @@ function AdminEvent() {
                           <p className="text-white truncate overflow-hidden whitespace-nowrap">
                             {event.eventname}
                           </p>
-                          <p className="font-light">{event.artistname}</p>
+                          <p className="font-extralight">{event.artistname}</p>
                         </div>
                       </div>
                     </td>
-                    <td className="h-[70px] table-cell text-left align-middle px-4 text-[13px] font-semibold">
+                    <td className="h-[70px] table-cell text-left align-middle px-4 text-[13px] font-medium">
                       <div className="flex items-center text-white justify-end">
                         {(() => {
                           switch (event.eventtype) {
@@ -327,7 +327,7 @@ function AdminEvent() {
           <div className="fixed z-20 bottom-0 inset-x-0 flex items-center justify-center mb-5">
             <div className="px-5 py-3 w-full h-full max-w-[420px] max-h-[170px] bg-[#191919] rounded-md shadow-lg text-white">
               <div className="flex justify-between py-2">
-                <p className="font-semibold text-[20px]">Select</p>
+                <p className="font-medium text-[20px]">Select</p>
                 <button
                   onClick={togglePopup}
                   className="flex items-center justify-center w-[30px] h-[30px] rounded-full bg-[#242424] hover:bg-[#942423]"

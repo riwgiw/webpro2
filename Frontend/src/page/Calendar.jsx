@@ -118,7 +118,7 @@ function Calendar() {
     >
       <Tooltip direction="right">{data.eventname}</Tooltip>
       <Popup>
-        <p className="font-semibold text-[15px]">{data.eventname}</p>
+        <p className="font-medium text-[15px]">{data.eventname}</p>
         <img
           src={"/images/" + data.eventimage}
           alt="Event"
@@ -131,7 +131,7 @@ function Calendar() {
   ));
 
   return (
-    <div className="bg-[#191414] w-full h-full min-h-dvh font-poppins">
+    <div className="bg-[#191414] w-full h-full min-h-dvh font-kanit">
       <Nav />
       <div className="mx-auto max-w-[1250px] bg-[#191414] mt-[60px]">
         <div className="px-2 sm:px-4 lg:px-6">
@@ -168,7 +168,7 @@ function Calendar() {
             </div>
           </div>
 
-          <p className="my-[20px] text-[#1DB954] font-semibold text-[35px] md:text-[40px]">
+          <p className="my-[20px] text-[#1DB954] font-medium text-[35px] md:text-[40px]">
             Calendar
           </p>
 
@@ -183,7 +183,7 @@ function Calendar() {
             />
           </div>
 
-          <p className="my-[20px] text-[#1DB954] font-semibold text-[35px] md:text-[40px]">
+          <p className="my-[20px] text-[#1DB954] font-medium text-[35px] md:text-[40px]">
             Map
           </p>
           <div className="z-0 max-w-[1210px] h-[700px] w-full rounded-md bg-white p-1">
@@ -201,7 +201,7 @@ function Calendar() {
             </MapContainer>
           </div>
 
-          <div className="my-[20px] flex font-semibold items-center">
+          <div className="my-[20px] flex font-medium items-center">
             {Allevents ? (
               <>
                 <button
@@ -336,7 +336,7 @@ function Calendar() {
             updata.length > 3 && ( // Condition to hide "Show more" button
               <div className="flex justify-center items-end w-full max-h-[80px] h-[80px]">
                 <div
-                  className="px-4 py-2 rounded-md bg-[#1DB954] text-white text-[20px] font-semibold cursor-pointer transition-all duration-300 hover:bg-[#1CAA4E]"
+                  className="px-4 py-2 rounded-md bg-[#1DB954] text-white text-[20px] font-medium cursor-pointer transition-all duration-300 hover:bg-[#1CAA4E]"
                   onClick={handleShowClick}
                 >
                   <p>{showMore ? "Show less" : "Show more"}</p>

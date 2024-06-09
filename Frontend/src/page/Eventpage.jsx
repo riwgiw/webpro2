@@ -160,7 +160,7 @@ function Eventpage() {
   };
 
   return (
-    <div className="bg-[#191414] w-full h-full min-h-dvh font-poppins">
+    <div className="bg-[#191414] w-full h-full min-h-dvh font-kanit">
       <Nav />
       <div className="mx-auto max-w-[1250px] bg-[#191414] mt-[60px]">
         <div className="hidden md:block px-6 sm:px-8 lg:px-10">
@@ -185,7 +185,7 @@ function Eventpage() {
               </div>
             </div>
             <div className="pr-[10px] ml-[40px] min-w-0 max-w-[710px] w-full">
-              <p className="mt-[40px] font-semibold text-[52px] w-full break-words text-[#1DB954]">
+              <p className="mt-[40px] font-medium text-[52px] w-full break-words text-[#1DB954]">
                 {eventname}
               </p>
               <div className="mt-[30px] max-h-[50px] w-full flex">
@@ -206,7 +206,7 @@ function Eventpage() {
                     {getDayName(startsum)}, {getLongMonth(startmonth)}{" "}
                     {startday}
                   </p>
-                  <p className="mt-[2px] font-light text-[14px]">
+                  <p className="mt-[2px] font-extralight text-[14px]">
                     {starthour}:{startminute} - {endhour}:{endminute} GMT+7
                   </p>
                 </div>
@@ -230,7 +230,7 @@ function Eventpage() {
               <div className="min-w-0 max-w-[665px] min-h-[400px] max-h-[400px] bg-[#242424] w-full h-full mt-[30px] rounded-md overflow-hidden">
                 {convertEmbedToReact(embedLink)}
               </div>
-              <p className="text-[#1DB954] font-semibold text-[24px] mt-[20px]">
+              <p className="text-[#1DB954] font-medium text-[24px] mt-[20px]">
                 About Event
               </p>
               <div className="min-w-0 max-w-[665px] min-h-0 max-h-[2px] w-full h-full bg-[#858585] mt-[10px] rounded-md"></div>
@@ -250,7 +250,7 @@ function Eventpage() {
               className="object-cover h-full w-full rounded-md"
             />
           </div>
-          <p className="mt-[40px] font-semibold text-[45px] w-full break-words text-[#1DB954]">
+          <p className="mt-[40px] font-medium text-[45px] w-full break-words text-[#1DB954]">
             {eventname}
           </p>
           <div className="mt-[30px] max-h-[50px] w-full flex">
@@ -268,7 +268,7 @@ function Eventpage() {
                     {getDayName(startsum)}, {getLongMonth(startmonth)}{" "}
                     {startday}
                 </p>
-                <p className="mt-[2px] font-light text-[14px]">
+                <p className="mt-[2px] font-extralight text-[14px]">
                   {starthour}:{startminute} - {endhour}:{endminute} GMT+7
                 </p>
               </div>
@@ -293,7 +293,7 @@ function Eventpage() {
             {convertEmbedToReact(embedLink)}
           </div>
 
-          <p className="text-[#1DB954] font-semibold text-[24px] mt-[20px]">
+          <p className="text-[#1DB954] font-medium text-[24px] mt-[20px]">
             About Event
           </p>
           <div className="min-w-0 min-h-[2px] w-full h-full bg-[#858585] mt-[10px] rounded-md"></div>

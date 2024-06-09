@@ -57,11 +57,11 @@ function EditUser() {
   };
 
   return (
-    <div className="bg-[#191414] w-full h-full min-h-dvh font-poppins">
+    <div className="bg-[#191414] w-full h-full min-h-dvh font-kanit">
       <Nav />
       <div className="w-full min-h-[60px] bg-[#242424] mt-[60px] fixed top-0 z-10">
         <div className="max-w-[1250px] mx-auto h-full bg-[#242424] px-4 sm:px-6 lg:px-8">
-          <div className="h-[60px] flex items-center justify-center sm:justify-start  text-white font-semibold">
+          <div className="h-[60px] flex items-center justify-center sm:justify-start  text-white font-medium">
             <Link to='/manageuser' className="transition-all duration-500 px-3 py-2 mr-[20px] rounded-lg bg-black text-[17px] sm:text-[18px] md:text-[20px]">
               Manage Users
             </Link>
@@ -88,7 +88,7 @@ function EditUser() {
               <p className="text-[#1DB954] font-medium text-[16px]">
                 {id}-{initialUsername}
               </p>
-              <p className="text-white font-semibold text-[20px]">Edit User</p>
+              <p className="text-white font-medium text-[20px]">Edit User</p>
             </div>
           </div>
           <div className="mt-[10px] rounded-md bg-[#242424] w-full h-[460px] p-[20px] text-[14px]">

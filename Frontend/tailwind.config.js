@@ -17,6 +17,9 @@ export default {
           '75%, 100%': {transform: 'translateX(-300%)' },
         }
       },
+      fontFamily: {
+        kanit: ["Kanit", "sans-serif"],
+      },
     },
   },
   plugins: [

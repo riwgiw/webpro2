@@ -121,11 +121,11 @@ function CreateEvent() {
   };
 
   return (
-    <div className="bg-[#191414] w-full h-full min-h-dvh font-poppins">
+    <div className="bg-[#191414] w-full h-full min-h-dvh font-kanit">
       <Nav />
       <div className="w-full min-h-[60px] bg-[#242424] mt-[60px] fixed top-0 z-10">
         <div className="max-w-[1250px] mx-auto h-full bg-[#242424] px-4 sm:px-6 lg:px-8">
-          <div className="h-[60px] flex items-center justify-center sm:justify-start  text-white font-semibold">
+          <div className="h-[60px] flex items-center justify-center sm:justify-start  text-white font-medium">
             <Link
               to="/manageuser"
               className="transition-all duration-500 px-3 py-2 hover:bg-[#191919] rounded-lg text-[16px] sm:text-[18px] md:text-[20px]"
@@ -152,7 +152,7 @@ function CreateEvent() {
               <p className="ml-[2px] text-[14px]">Back</p>
             </Link>
             <div className="ml-[15px] flex flex-col justify-evenly h-full">
-              <p className="text-white font-semibold text-[20px]">
+              <p className="text-white font-medium text-[20px]">
                 Create Event
               </p>
             </div>
@@ -166,7 +166,7 @@ function CreateEvent() {
                 <p className="mb-[10px]">Image</p>
                 <div className="w-full h-0 rounded-md aspect-w-1 aspect-h-1 bg-[#191414] my-[10px] relative">
                   <div className="w-full h-full flex items-center justify-center">
-                    <p className="text-[30px] font-bold text-slate-200">
+                    <p className="text-[30px] font-medium text-slate-200">
                       500 x 500
                     </p>
                   </div>
@@ -183,12 +183,12 @@ function CreateEvent() {
                   accept="image/*"
                   onChange={onInputChange1}
                   className="px-3 py-2 my-[10px] h-[40px] w-full rounded-md bg-[#191414] flex text-white 
-                file:border-0 file:bg-[#191414] file:text-[14px] file:font-semibold file:text-white"
+                file:border-0 file:bg-[#191414] file:text-[14px] file:font-medium file:text-white"
                 ></input>
                 <p className="mt-[15px] mb-[10px]">Artist</p>
                 <div className="w-full h-0 rounded-md aspect-w-1 aspect-h-1 bg-[#191414] my-[10px] relative">
                   <div className="w-full h-full flex items-center justify-center">
-                    <p className="text-[30px] font-bold text-slate-200">
+                    <p className="text-[30px] font-medium text-slate-200">
                       500 x 500
                     </p>
                   </div>
@@ -205,7 +205,7 @@ function CreateEvent() {
                   accept="image/*"
                   onChange={onInputChange2}
                   className="px-3 py-2 my-[10px] h-[40px] w-full rounded-md bg-[#191414] flex text-white
-                file:border-0 file:bg-[#191414] file:text-[14px] file:font-semibold file:text-white"
+                file:border-0 file:bg-[#191414] file:text-[14px] file:font-medium file:text-white"
                 ></input>
                 <p className="mt-[15px] mb-[10px]">Name Artist</p>
                 <input
@@ -348,7 +348,7 @@ function CreateEvent() {
                   <div className="w-full h-[100px] rounded-md outline-2 outline outline-[#8A8A8A] px-[2px] py-[2px] mb-[10px] flex">
                     <div className="h-full w-[30px] bg-[#191414] rounded-l-md text-white flex flex-col items-center pt-1">
                       <IconCom icon="calendarcorrect" size="16" />
-                      <p className="rotate-90 mt-5 text-[16px] font-semibold">
+                      <p className="rotate-90 mt-5 text-[16px] font-medium">
                         START
                       </p>
                     </div>
@@ -435,7 +435,7 @@ function CreateEvent() {
                             </option>
                           ))}
                         </select>
-                        <p className="text-[16px] font-semibold mx-1">:</p>
+                        <p className="text-[16px] font-medium mx-1">:</p>
                         <select
                           onChange={handleInput}
                           name="startminute"
@@ -459,7 +459,7 @@ function CreateEvent() {
                   <div className="w-full h-[100px] rounded-md outline-2 outline outline-[#8A8A8A] px-[2px] py-[2px] mt-[10px] flex">
                     <div className="h-full w-[30px] bg-[#191414] rounded-l-md text-white flex flex-col items-center pt-1">
                       <IconCom icon="calendarx" size="16" />
-                      <p className="rotate-90 mt-3 text-[16px] font-semibold">
+                      <p className="rotate-90 mt-3 text-[16px] font-medium">
                         END
                       </p>
                     </div>
@@ -546,7 +546,7 @@ function CreateEvent() {
                             </option>
                           ))}
                         </select>
-                        <p className="text-[16px] font-semibold mx-1">:</p>
+                        <p className="text-[16px] font-medium mx-1">:</p>
                         <select
                           onChange={handleInput}
                           name="endminute"
@@ -567,7 +567,7 @@ function CreateEvent() {
                     </div>
                   </div>
                 </div>
-                <button className="h-[40px] w-full rounded-lg mt-[40px] bg-[#1DB954] text-[18px] text-center font-semibold text-white transition-all duration-300 hover:bg-[#1CAA4E]">
+                <button className="h-[40px] w-full rounded-lg mt-[40px] bg-[#1DB954] text-[18px] text-center font-medium text-white transition-all duration-300 hover:bg-[#1CAA4E]">
                   Create Event
                 </button>
               </div>
@@ -576,7 +576,7 @@ function CreateEvent() {
               <p className="mb-[10px]">Image</p>
               <div className="w-full h-0 rounded-md aspect-w-1 aspect-h-1 bg-[#191414] my-[10px] relative">
                 <div className="w-full h-full flex items-center justify-center">
-                  <p className="text-[30px] font-bold text-slate-200">
+                  <p className="text-[30px] font-medium text-slate-200">
                     500 x 500
                   </p>
                 </div>
@@ -593,12 +593,12 @@ function CreateEvent() {
                 accept="image/*"
                 onChange={onInputChange1}
                 className="px-3 py-2 my-[10px] h-[40px] w-full rounded-md bg-[#191414] flex text-white 
-                file:border-0 file:bg-[#191414] file:text-[14px] file:font-semibold file:text-white"
+                file:border-0 file:bg-[#191414] file:text-[14px] file:font-medium file:text-white"
               ></input>
               <p className="mt-[15px] mb-[10px]">Artist</p>
               <div className="w-full h-0 rounded-md aspect-w-1 aspect-h-1 bg-[#191414] my-[10px] relative">
                 <div className="w-full h-full flex items-center justify-center">
-                  <p className="text-[30px] font-bold text-slate-200">
+                  <p className="text-[30px] font-medium text-slate-200">
                     500 x 500
                   </p>
                 </div>
@@ -615,7 +615,7 @@ function CreateEvent() {
                 accept="image/*"
                 onChange={onInputChange2}
                 className="px-3 py-2 my-[10px] h-[40px] w-full rounded-md bg-[#191414] flex text-white
-                file:border-0 file:bg-[#191414] file:text-[14px] file:font-semibold file:text-white"
+                file:border-0 file:bg-[#191414] file:text-[14px] file:font-medium file:text-white"
               ></input>
               <p className="mt-[15px] mb-[10px]">Name Artist</p>
               <input
@@ -731,7 +731,7 @@ function CreateEvent() {
                 <div className="w-full h-[100px] rounded-md outline-2 outline outline-[#8A8A8A] px-[2px] py-[2px] mb-[10px] flex">
                   <div className="h-full w-[30px] bg-[#191414] rounded-l-md text-white flex flex-col items-center pt-1">
                     <IconCom icon="calendarcorrect" size="16" />
-                    <p className="rotate-90 mt-5 text-[16px] font-semibold">
+                    <p className="rotate-90 mt-5 text-[16px] font-medium">
                       START
                     </p>
                   </div>
@@ -814,7 +814,7 @@ function CreateEvent() {
                           </option>
                         ))}
                       </select>
-                      <p className="text-[16px] font-semibold mx-1">:</p>
+                      <p className="text-[16px] font-medium mx-1">:</p>
                       <select
                         onChange={handleInput}
                         name="startminute"
@@ -838,7 +838,7 @@ function CreateEvent() {
                 <div className="w-full h-[100px] rounded-md outline-2 outline outline-[#8A8A8A] px-[2px] py-[2px] mt-[10px] flex">
                   <div className="h-full w-[30px] bg-[#191414] rounded-l-md text-white flex flex-col items-center pt-1">
                     <IconCom icon="calendarx" size="16" />
-                    <p className="rotate-90 mt-3 text-[16px] font-semibold">
+                    <p className="rotate-90 mt-3 text-[16px] font-medium">
                       END
                     </p>
                   </div>
@@ -921,7 +921,7 @@ function CreateEvent() {
                           </option>
                         ))}
                       </select>
-                      <p className="text-[16px] font-semibold mx-1">:</p>
+                      <p className="text-[16px] font-medium mx-1">:</p>
                       <select
                         onChange={handleInput}
                         name="endminute"
@@ -944,7 +944,7 @@ function CreateEvent() {
               </div>
               <button
                 type="submit"
-                className="text-[18px] h-[40px] w-full rounded-lg mt-[40px] bg-[#1DB954] text-center font-semibold text-white hover:bg-[#1CAA4E]"
+                className="text-[18px] h-[40px] w-full rounded-lg mt-[40px] bg-[#1DB954] text-center font-medium text-white hover:bg-[#1CAA4E]"
               >
                 Create Event
               </button>

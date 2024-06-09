@@ -19,8 +19,6 @@ function App() {
 
 
   useEffect(() => {
-    // ส่งคำขอไปยังเซิร์ฟเวอร์เพื่อรับข้อมูลของผู้ใช้ที่เข้าสู่ระบบ
-
     axios
       .get("http://localhost:3002")
       .then((res) => {
