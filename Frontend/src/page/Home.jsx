@@ -208,9 +208,9 @@ function Home() {
           <div className="">
             <div className="min-h-[830px] w-full flex flex-col justify-start">
               <div className="min-h-[750px] w-full grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 grid gap-2 md:gap-3">
-                {data.length > 0 ? (
+                {data.length > 1 ? (
               data
-                .slice(0, showMore ? data.length : 6)  // Dynamically adjust based on `showMore`
+                .slice(1, showMore ? data.length : 7)  // Dynamically adjust based on `showMore`
                 .map((event, index) => (
                   <Link
                     key={index}
